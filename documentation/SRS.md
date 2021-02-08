@@ -35,7 +35,7 @@
 * [MySQL](https://www.mysql.com/) - cамая популярная в мире база данных с открытым исходным кодом.
 * [YouTube Player API](https://developers.google.com/youtube/iframe_api_reference?hl=ru) - API проигрывателя IFrame позволяет встраивать проигрыватель видео YouTube на сайт и управлять использованием JavaScript. 
 #### 2.2. Интерфейс пользователя <a name="2.2"></a>
-Графический интерфейс проекта представлен с помощью мокапов [главного окна](https://github.com/vectordiman/SpaceY/blob/main/documentation/mockups/Main.png), [окна меню](https://github.com/vectordiman/SpaceY/blob/main/documentation/mockups/Menu.png) и [окна деталей](https://github.com/vectordiman/SpaceY/blob/main/documentation/mockups/Detail.png).
+Графический интерфейс проекта представлен с помощью мокапов [главного окна](https://github.com/vectordiman/SpaceY/blob/master/documentation/mockups/Main.png), [окна меню](https://github.com/vectordiman/SpaceY/blob/master/documentation/mockups/Menu.png) и [окна деталей](https://github.com/vectordiman/SpaceY/blob/master/documentation/mockups/Detail.png).
 #### 2.3. Характеристики пользователей <a name="2.3"></a>
 Целевой аудиторией являются пользователи веб-браузеров, интересующиеся космосом и тем, что с ним связано.
 #### 2.4. Предположения и зависимости <a name="2.4"></a>
