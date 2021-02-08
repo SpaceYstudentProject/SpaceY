@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NewsComponent } from './news/news.component';
 import { MissionComponent } from './mission/mission.component';
 import { StarshipComponent } from './starship/starship.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { StarshipComponent } from './starship/starship.component';
     StarshipComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
