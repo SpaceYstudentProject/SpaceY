@@ -6,17 +6,21 @@ import { NewsComponent } from './news/news.component';
 import { MissionComponent } from './mission/mission.component';
 import { StarshipComponent } from './starship/starship.component';
 import { AppRoutingModule } from './app-routing.module';
+import { LaunchesComponent } from './launches/launches.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsComponent,
     MissionComponent,
-    StarshipComponent
+    StarshipComponent,
+    LaunchesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
