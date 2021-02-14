@@ -6,10 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SpacexService {
 
-  urlLaunches = 'https://api.spacexdata.com/v4/launches';
+  url = 'https://api.spacexdata.com/v4/';
 
   constructor(private http: HttpClient) { }
-  getLaunchesList() {
-    return this.http.get(this.urlLaunches);
+  getData(path: string) {
+    return this.http.get(this.url + path);
   }
 }

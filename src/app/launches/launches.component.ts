@@ -13,7 +13,7 @@ export class LaunchesComponent implements OnInit {
   constructor(private spacex: SpacexService) { }
 
   ngOnInit(): void {
-    this.spacex.getLaunchesList().subscribe((result) => {
+    this.spacex.getData('launches').subscribe((result) => {
       this.collection = result;
     });
   }

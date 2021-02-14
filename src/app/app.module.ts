@@ -8,6 +8,7 @@ import { StarshipComponent } from './starship/starship.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LaunchesComponent } from './launches/launches.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     NewsComponent,
     MissionComponent,
     StarshipComponent,
-    LaunchesComponent
+    LaunchesComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
