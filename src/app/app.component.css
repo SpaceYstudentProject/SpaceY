@@ -1,0 +1,17 @@
+.wrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  transition: 0.5s;
+  transform: translateX(100%);
+}
+
+.menu-active {
+  transform: translateX(0%);
+}

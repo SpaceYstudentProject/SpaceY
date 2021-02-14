@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'SpaceY';
+  menuActive = false;
+
+  handleClick(event: Event): void {
+    event.preventDefault();
+    this.menuActive = !this.menuActive;
+  }
+
+  @HostListener('window:scroll', ['$event']) onScrollEvent($event): void {
+    $event.preventDefault();
+    this.menuActive = false;
+  }
 }
