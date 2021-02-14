@@ -26,7 +26,7 @@
     </button>
   </form>
 </nav>
-<div class="wrapper">
+<div class="wrapper" (window:scroll)="onScrollEvent($event)">
   <div class="menu" [class.menu-active]="menuActive">
     <div class="list-group list-group-flush" style="height: 100%">
       <a href="#" class="list-group-item list-group-item-action list-group-item-light bg-dark">Modules</a>

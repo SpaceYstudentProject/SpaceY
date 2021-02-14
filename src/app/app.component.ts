@@ -14,8 +14,8 @@ export class AppComponent {
     this.menuActive = !this.menuActive;
   }
 
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event): void {
-    $event.preventDefault();
+  onScrollEvent(event: Event): void {
+    event.preventDefault();
     this.menuActive = false;
   }
 }
