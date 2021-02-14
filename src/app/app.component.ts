@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'SpaceY';
   menuActive = false;
 
-  handleClick(event: Event): void {
+  onClickMenu(event: Event): void {
     event.preventDefault();
     this.menuActive = !this.menuActive;
   }
