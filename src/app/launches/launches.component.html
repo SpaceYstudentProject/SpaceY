@@ -1,18 +1,18 @@
-<div class="container">
-  <table class="table">
-    <thead>
-    <tr>
-      <th scope="col">Patch</th>
-      <th scope="col">Name</th>
-      <th scope="col">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let items of collection">
-      <th><img src="{{items.links.patch.small}}" alt="{{items.name}}" width="60" height="60"></th>
-      <th>{{items.name}}</th>
-      <th>{{items.details}}</th>
-    </tr>
-    </tbody>
-  </table>
+<div class="wrapper">
+  <div class="card-columns">
+      <div class="card" *ngFor="let items of collection">
+        <div class="img-content" ngSwitch="{{items.links.patch.small}}">
+          <img *ngSwitchCase="''" class="card-img-top" src="./assets/jpg/y-logo.jpg" alt="{{items.name}}">
+          <img *ngSwitchDefault class="card-img-top" src="{{items.links.patch.small}}" alt="{{items.name}}">
+        </div>
+        <div class="card-body" ngSwitch="{{items.details}}">
+          <h5 class="card-title">{{items.name}}</h5>
+          <p *ngSwitchCase="''" class="card-text">No description provided</p>
+          <p *ngSwitchDefault class="card-text">{{items.details}}</p>
+          <p class="lead">
+            <a class="btn btn-outline-dark btn-lg" href="#" role="button">Learn more</a>
+          </p>
+        </div>
+      </div>
+  </div>
 </div>

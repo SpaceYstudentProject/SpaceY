@@ -10,7 +10,8 @@ export class LaunchesComponent implements OnInit {
 
   collection = {};
 
-  constructor(private spacex: SpacexService) { }
+  constructor(private spacex: SpacexService) {
+  }
 
   ngOnInit(): void {
     this.spacex.getData('launches').subscribe((result) => {

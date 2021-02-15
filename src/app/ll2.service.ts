@@ -4,8 +4,8 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class SpacexService {
-  url = 'https://api.spacexdata.com/v4/';
+export class Ll2Service {
+  url = 'https://ll.thespacedevs.com/2.1.0/';
 
   constructor(private http: HttpClient) { }
   getData(path: string) {

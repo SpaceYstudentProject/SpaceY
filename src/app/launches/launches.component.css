@@ -1,0 +1,49 @@
+.wrapper {
+  background-color: white;
+  align-content: center;
+  padding-top: 3vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
+}
+
+.card-columns {
+  column-count: 4;
+  height: 25%;
+}
+
+.card {
+  background-color: white;
+  border-color: #2f3542;
+}
+
+.img-content {
+  background-color: black;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+
+.card-img-top {
+  height: 25vh;
+  width: 25vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.card-title {
+  color: #2f3542;
+  height: 56px;
+  overflow: hidden;
+}
+
+.card-text {
+  color: #2f3542;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 1.3em;
+  height: 3.95em;
+}
+
