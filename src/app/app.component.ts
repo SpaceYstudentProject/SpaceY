@@ -18,5 +18,5 @@ export class AppComponent {
     event.preventDefault();
     this.menuActive = false;
   }
-}
+}///
 
