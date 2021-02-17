@@ -16,6 +16,7 @@
   border-color: #2f3542;
   border-bottom-width: 5px;
   box-shadow: 7px -2px 10px rgba(0,0,0,0.5);
+  transition: 0.5s;
 }
 
 .card:hover {
@@ -23,7 +24,8 @@
   border-color: #2f3542;
   border-bottom-width: 5px;
   box-shadow: 7px -2px 10px rgba(0,0,0,0.5);
-  transform: translate3d(42px, -62px, -135px);
+  transform: translate3d(0vh, -3vh, 15vh);
+  transition: 0.5s;
 }
 
 .img-content {
