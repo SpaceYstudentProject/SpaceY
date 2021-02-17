@@ -1,9 +1,9 @@
 .wrapper {
-  background-color: white;
+  background-color: lavender;
   align-content: center;
-  padding-top: 3vh;
-  padding-left: 3vh;
-  padding-right: 3vh;
+  padding-top: 7vh;
+  padding-left: 20vh;
+  padding-right: 20vh;
 }
 
 .card-columns {
@@ -14,6 +14,16 @@
 .card {
   background-color: white;
   border-color: #2f3542;
+  border-bottom-width: 5px;
+  box-shadow: 7px -2px 10px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+  background-color: white;
+  border-color: #2f3542;
+  border-bottom-width: 5px;
+  box-shadow: 7px -2px 10px rgba(0,0,0,0.5);
+  transform: translate3d(42px, -62px, -135px);
 }
 
 .img-content {

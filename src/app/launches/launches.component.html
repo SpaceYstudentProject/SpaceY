@@ -2,7 +2,7 @@
   <div class="card-columns">
       <div class="card" *ngFor="let items of collection">
         <div class="img-content" ngSwitch="{{items.links.patch.small}}">
-          <img *ngSwitchCase="''" class="card-img-top" src="./assets/jpg/y-logo.jpg" alt="{{items.name}}">
+          <img *ngSwitchCase="''" class="card-img-top" src="./assets/png/patch-not-found.png" alt="{{items.name}}">
           <img *ngSwitchDefault class="card-img-top" src="{{items.links.patch.small}}" alt="{{items.name}}">
         </div>
         <div class="card-body" ngSwitch="{{items.details}}">
@@ -16,4 +16,3 @@
       </div>
   </div>
 </div>
-
