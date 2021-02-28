@@ -9,6 +9,7 @@ import { LaunchesComponent } from './launches/launches.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogsComponent } from './blogs/blogs.component';
+import { CrewComponent } from './crew/crew.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     StarshipComponent,
     LaunchesComponent,
     HomeComponent,
-    BlogsComponent
+    BlogsComponent,
+    CrewComponent
   ],
   imports: [
     BrowserModule,

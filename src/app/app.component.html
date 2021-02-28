@@ -6,10 +6,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class="nav-link" routerLink="/blogs">Blogs</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="/mission">Mission</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="/starship">Starship</a></li>
       <li class="nav-item"><a class="nav-link" routerLink="/launches">Launches</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/crew">Crew</a></li>
     </ul>
   </div>
   <form class="form-inline">
@@ -29,16 +29,16 @@
 <div class="wrapper" (window:scroll)="onScrollEvent($event)">
   <div class="menu" [class.menu-active]="menuActive">
     <div class="list-group list-group-flush" style="height: 100%">
-      <a href="#" class="list-group-item list-group-item-action list-group-item-light bg-dark">Modules</a>
-      <a href="#" class="list-group-item list-group-item-action list-group-item-light bg-dark">Careers</a>
-      <a href="#" class="list-group-item list-group-item-action list-group-item-light bg-dark">Crew</a>
-      <a href="#" class="list-group-item list-group-item-action list-group-item-light bg-dark">Updates</a>
-      <a href="#" class="list-group-item list-group-item-action list-group-item-light bg-dark">Dragon</a>
-      <a href="#" class="list-group-item list-group-item-action list-group-item-light bg-dark">Falcon 9</a>
-      <a href="#" class="list-group-item list-group-item-light bg-dark disabled" style="height: 100vh"></a>
+      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light bg-dark" (click)="onClickMenu($event)">Modules</a>
+      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light bg-dark" (click)="onClickMenu($event)">Careers</a>
+      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light bg-dark" (click)="onClickMenu($event)">Blogs</a>
+      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light bg-dark" (click)="onClickMenu($event)">Dragon</a>
+      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light bg-dark" (click)="onClickMenu($event)">Starlink</a>
+      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-light bg-dark disabled" style="height: 100vh"></a>
     </div>
   </div>
   <div class="content">
+    <div class="blackout" [class.blackout-active]="menuActive"></div>
     <router-outlet></router-outlet>
   </div>
 </div>
