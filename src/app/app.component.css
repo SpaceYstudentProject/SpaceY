@@ -11,7 +11,7 @@
   height: 100%;
   transition: 0.5s;
   transform: translateX(100%);
-  z-index: 3;
+  z-index: 15;
 }
 
 .menu-active {
@@ -24,15 +24,15 @@
 .blackout {
   position: absolute;
   background-color: black;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
   z-index: -1;
   transition: 0.5s;
   opacity: 0.0;
-  overflow: hidden;
+  -ms-overflow-x: hidden;
 }
 .blackout-active {
   opacity: 0.5;
-  z-index: -0;
+  z-index: 10;
+  height: 98%;
 }
 
