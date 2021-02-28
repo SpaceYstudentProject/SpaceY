@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Ll2Service } from '../ll2.service';
+import { SpaceDevsService } from "../space-devs.service";
 
 @Component({
   selector: 'app-home',
@@ -8,22 +8,14 @@ import { Ll2Service } from '../ll2.service';
 })
 export class HomeComponent implements OnInit {
 
-  collection = [];
+  collection = {};
 
-  constructor(private ll2: Ll2Service) { }
+  constructor(private spaceDevsService: SpaceDevsService) {
+  }
 
   ngOnInit(): void {
-    this.ll2.getData('launch/').subscribe((result) => {
-      this.collection.push(result);
-    });
-    this.ll2.getData('event/').subscribe((result) => {
-      this.collection.push(result);
-    });
-    this.ll2.getData('agencies/').subscribe((result) => {
-      this.collection.push(result);
-    });
-    this.ll2.getData('spacestation/').subscribe((result) => {
-      this.collection.push(result);
+    this.spaceDevsService.getData('articles').subscribe((result) => {
+      this.collection = result;
     });
   }
 

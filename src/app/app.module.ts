@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NewsComponent } from './news/news.component';
 import { MissionComponent } from './mission/mission.component';
 import { StarshipComponent } from './starship/starship.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LaunchesComponent } from './launches/launches.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BlogsComponent } from './blogs/blogs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewsComponent,
     MissionComponent,
     StarshipComponent,
     LaunchesComponent,
-    HomeComponent
+    HomeComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserModule,

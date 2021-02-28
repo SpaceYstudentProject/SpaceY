@@ -16,3 +16,8 @@
 .menu-active {
   transform: translateX(0%);
 }
+
+.content {
+  padding-top: 3em;
+}
+

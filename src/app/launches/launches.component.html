@@ -5,7 +5,7 @@
           <img *ngSwitchCase="''" class="card-img-top" src="./assets/png/patch-not-found.png" alt="{{items.name}}">
           <img *ngSwitchDefault class="card-img-top" src="{{items.links.patch.small}}" alt="{{items.name}}">
         </div>
-        <div class="card-body" ngSwitch="{{items.details}}">
+        <div class="card-body bg-light" ngSwitch="{{items.details}}">
           <h5 class="card-title">{{items.name}}</h5>
           <p *ngSwitchCase="''" class="card-text">No description provided</p>
           <p *ngSwitchDefault class="card-text">{{items.details}}</p>

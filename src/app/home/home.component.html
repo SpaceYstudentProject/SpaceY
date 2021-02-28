@@ -1,57 +1,27 @@
 <div class="wrapper">
   <div class="content">
-    <section class="news">
-      <div class="jumbotron jumbotron-fluid bg-white">
+    <section class="article" *ngFor="let items of collection; index as i">
+      <div class="jumbotron bg-light jumbotron-fluid" id="jumbotron-even" *ngIf="i % 2 == 0">
         <div class="container">
           <br>
-          <h1 class="display-4">DRAGON DOCKING SIMULATOR</h1>
-          <p class="lead">Dragon is designed to autonomously dock and undock with the International Space Station.</p>
+          <h1 class="display-4">{{items.title}}</h1>
+          <p class="lead">{{items.newsSite}}</p>
           <hr class="my-4">
-          <p>The crew can take manual control of the spacecraft if necessary.</p>
+          <p>{{items.summary}}</p>
           <p class="lead">
-            <a class="btn btn-outline-dark btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-outline-dark btn-lg" href="{{items.url}}" role="button">Learn more</a>
           </p>
         </div>
       </div>
-    </section>
-    <section class="mission">
-      <div class="jumbotron jumbotron-fluid">
+      <div class="jumbotron bg-dark jumbotron-fluid" id="jumbotron-uneven" *ngIf="i % 2 != 0">
         <div class="container">
           <br>
-          <h1 class="display-4">CREW-1 MISSION</h1>
-          <p class="lead">Crew-1 is the first of three scheduled Dragon human spaceflights over the course of 2020 and 2021.</p>
+          <h1 class="display-4 text-light">{{items.title}}</h1>
+          <p class="lead text-light">{{items.newsSite}}</p>
           <hr class="my-4">
-          <p>Watch the Crew-1 mission from the beginning.</p>
+          <p class="text-light">{{items.summary}}</p>
           <p class="lead">
-            <a class="btn btn-outline-dark btn-lg" href="#" role="button">Learn more</a>
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="starship">
-      <div class="jumbotron jumbotron-fluid bg-white">
-        <div class="container">
-          <br>
-          <h1 class="display-4">STARSHIP</h1>
-          <p class="lead">Starship is SpaceX’s fully reusable transportation system designed to carry both crew and cargo to the Earth’s orbit, the Moon, Mars, and beyond.</p>
-          <hr class="my-4">
-          <p>The Starship prototype descended under active aerodynamic control, accomplished by independent movement of two forward and two aft flaps on the vehicle.</p>
-          <p class="lead">
-            <a class="btn btn-outline-dark btn-lg" href="#" role="button">Learn more</a>
-          </p>
-        </div>
-      </div>
-    </section>
-    <section class="launches">
-      <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <br>
-          <h1 class="display-4">STARLINK MISSION</h1>
-          <p class="lead">Starlink is now delivering initial beta service both domestically and internationally and will continue expansion to near global coverage of the populated world in 2021.</p>
-          <hr class="my-4">
-          <p>The Falcon 9 first stage rocket booster supporting this mission previously flew on five missions</p>
-          <p class="lead">
-            <a class="btn btn-outline-dark btn-lg" href="#" role="button">Learn more</a>
+            <a class="btn btn-outline-light btn-lg" href="{{items.url}}" role="button">Learn more</a>
           </p>
         </div>
       </div>

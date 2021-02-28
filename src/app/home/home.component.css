@@ -1,20 +1,21 @@
+.wrapper {
+  background-color: black;
+}
+
 section {
   height: auto;
 }
 
-.news {
-  background-color: #57606f;
+#jumbotron-even {
+  background-color: whitesmoke;
+  margin-bottom: 0;
 }
 
-.mission {
-  background-color: #2f3542;
+#jumbotron-uneven {
+  background-color: dimgrey;
+  margin-bottom: 0;
 }
 
-.starship {
-  background-color: #57606f;
+.display-4 {
+  text-transform:uppercase;
 }
-
-.launches {
-  background-color: #2f3542;
-}
-
