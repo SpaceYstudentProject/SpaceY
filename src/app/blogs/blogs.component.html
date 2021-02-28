@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="content">
+    <section class="article" *ngFor="let items of collection; index as i">
+      <div class="jumbotron bg-light jumbotron-fluid" id="jumbotron-even" *ngIf="i % 2 == 0">
+        <div class="container">
+          <br>
+          <h1 class="display-4">{{items.title}}</h1>
+          <p class="lead">{{items.newsSite}}</p>
+          <hr class="my-4">
+          <p>{{items.summary}}</p>
+          <p class="lead">
+            <a class="btn btn-outline-dark btn-lg" href="{{items.url}}" role="button">Learn more</a>
+          </p>
+        </div>
+      </div>
+      <div class="jumbotron bg-dark jumbotron-fluid" id="jumbotron-uneven" *ngIf="i % 2 != 0">
+        <div class="container">
+          <br>
+          <h1 class="display-4 text-light">{{items.title}}</h1>
+          <p class="lead text-light">{{items.newsSite}}</p>
+          <hr class="my-4">
+          <p class="text-light">{{items.summary}}</p>
+          <p class="lead">
+            <a class="btn btn-outline-light btn-lg" href="{{items.url}}" role="button">Learn more</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.wrapper {
+  background-color: black;
+}
+
+section {
+  height: auto;
+}
+
+#jumbotron-even {
+  background-color: whitesmoke;
+  margin-bottom: 0;
+}
+
+#jumbotron-uneven {
+  background-color: dimgrey;
+  margin-bottom: 0;
+}
+
+.display-4 {
+  text-transform:uppercase;
+}
