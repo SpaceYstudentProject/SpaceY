@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BlogsComponent } from './blogs/blogs.component';
 import { CrewComponent } from './crew/crew.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LaunchesComponent,
     HomeComponent,
     BlogsComponent,
-    CrewComponent
+    CrewComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
