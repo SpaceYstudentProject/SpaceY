@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="content">
     <section class="article" *ngFor="let items of collection; index as i">
-      <div class="jumbotron bg-light jumbotron-fluid" id="jumbotron-even" *ngIf="i % 2 == 0">
+      <div class="jumbotron jumbotron-fluid" id="jumbotron-even" *ngIf="i % 2 == 0">
         <div class="container">
           <br>
           <h1 class="display-4">{{items.title}}</h1>
@@ -13,7 +13,7 @@
           </p>
         </div>
       </div>
-      <div class="jumbotron bg-dark jumbotron-fluid" id="jumbotron-uneven" *ngIf="i % 2 != 0">
+      <div class="jumbotron jumbotron-fluid" id="jumbotron-uneven" *ngIf="i % 2 != 0">
         <div class="container">
           <br>
           <h1 class="display-4 text-light">{{items.title}}</h1>

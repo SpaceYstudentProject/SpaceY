@@ -7,13 +7,17 @@ section {
 }
 
 #jumbotron-even {
-  background-color: whitesmoke;
+  background-color: #eff0f0;
   margin-bottom: 0;
 }
 
 #jumbotron-uneven {
-  background-color: dimgrey;
+  background-color: #252626;
   margin-bottom: 0;
+}
+
+.btn-outline-dark:hover {
+  background: #252626;
 }
 
 .display-4 {

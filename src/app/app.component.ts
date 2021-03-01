@@ -9,7 +9,6 @@ import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 export class AppComponent {
   title = 'SpaceY';
   menuActive = false;
-
   onClickMenu(event: Event): void {
     event.preventDefault();
     this.menuActive = !this.menuActive;

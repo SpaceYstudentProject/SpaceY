@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: lavender;
+  background-color: #eff0f0;
   align-content: center;
   padding-top: 7vh;
   padding-left: 15vh;
@@ -14,7 +14,7 @@
 
 .card {
   background-color: white;
-  border-color: #2f3542;
+  border-color: #252626;
   border-bottom-width: 5px;
   box-shadow: 7px -2px 10px rgba(0, 0, 0, 0.5);
   transition: 0.5s;
@@ -56,5 +56,9 @@
   -webkit-box-orient: vertical;
   line-height: 1.3em;
   height: 3.95em;
+}
+
+.btn-outline-dark:hover {
+  background: #252626;
 }
 
