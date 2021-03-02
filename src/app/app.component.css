@@ -1,17 +1,5 @@
-.navigation {
+.navigation, nav, .navbar, .list-group-item, footer {
   background: rgb(29,29,29);
-}
-
-nav {
-  background: rgb(29,29,29);
-}
-
-.navbar {
-  background: rgb(29,29,29);
-}
-
-.list-group-item {
-  background-color: rgb(29,29,29);
 }
 
 .list-group-item:hover {
@@ -22,20 +10,6 @@ nav {
   position: relative;
   overflow-x: hidden;
 }
-
-/*.menu-button {*/
-/*  background: none;*/
-/*  border: none;*/
-/*  color: white;*/
-/*  width: 32px;*/
-/*  height: 32px;*/
-/*}*/
-
-/*.menu-button:not(:disabled):not(.disabled){*/
-/*  background: none;*/
-/*  border: none;*/
-/*  box-shadow: none !important;*/
-/*}*/
 
 .menu {
   position: fixed;
@@ -70,8 +44,6 @@ nav {
   z-index: 10;
   height: 100%;
 }
-
-/**/
 
 .menu-btn {
   position: relative;
@@ -129,4 +101,12 @@ nav {
 }
 .menu-btn.open .menu-btn_burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
+}
+
+#image-git {
+  background: #eff0f0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px none;
 }

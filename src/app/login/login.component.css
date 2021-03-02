@@ -1,8 +1,42 @@
 .wrapper {
-  background-color: #eff0f0;
   align-content: center;
-  padding-top: 7vh;
-  padding-left: 15vh;
-  padding-right: 15vh;
-  height: 38em;
+  height: 100%;
+  padding: 12vh 75vh 13vh 75vh;
+  background: #252626;
+  /*background: no-repeat url("../../assets/jpg/background.jpg");*/
+  /*background-size: cover;*/
+}
+
+#y-logo {
+  width: 170px;
+  height: 170px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5vh;
+  transition: 0.5s;
+  border-radius: 50%;
+}
+
+#y-logo:hover {
+  transform: scale(1.15);
+}
+
+.content {
+
+  /*width: 50vh;*/
+  /*height: 50vh;*/
+  /*padding-top: 11vh;*/
+  /*padding-bottom: 11vh;*/
+  /*display: block;*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  /*border-color: 3px #eff0f0;*/
+  border-width: 10px;
+  border-color: #eff0f0;
+}
+
+.btn {
+  margin-top: 11px;
+  width: 100%;
 }
