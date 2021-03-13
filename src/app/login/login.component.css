@@ -1,6 +1,6 @@
 .wrapper {
   align-content: center;
-  height: 100%;
+  height: calc(100vh - 115.3px);
   padding: 15vh 75vh 17vh 75vh;
   background: #252626;
   /*background: radial-gradient(#252626, black);*/

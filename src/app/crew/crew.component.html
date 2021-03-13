@@ -4,9 +4,7 @@
       <div class="row" *ngIf="i % 3 == 0">
         <div class="card-columns">
           <div class="card" *ngIf="collection[i]">
-            <div class="img-content">
-              <img class="card-img-top" src="{{collection[i].image}}" alt="{{collection[i].name}}">
-            </div>
+            <img class="card-img-top" src="{{collection[i].image}}" alt="{{collection[i].name}}">
             <div class="card-body">
               <h5 class="card-title">{{collection[i].name}}</h5>
               <footer class="blockquote-footer">
@@ -16,9 +14,7 @@
             </div>
           </div>
           <div class="card" *ngIf="collection[i + 1]">
-            <div class="img-content">
-              <img class="card-img-top" src="{{collection[i + 1].image}}" alt="{{collection[i + 1].name}}">
-            </div>
+            <img class="card-img-top" src="{{collection[i + 1].image}}" alt="{{collection[i + 1].name}}">
             <div class="card-body">
               <h5 class="card-title">{{collection[i + 1].name}}</h5>
               <footer class="blockquote-footer">
@@ -28,9 +24,7 @@
             </div>
           </div>
           <div class="card" *ngIf="collection[i + 2]">
-            <div class="img-content">
-              <img class="card-img-top" src="{{collection[i + 2].image}}" alt="{{collection[i + 2].name}}">
-            </div>
+            <img class="card-img-top" src="{{collection[i + 2].image}}" alt="{{collection[i + 2].name}}">
             <div class="card-body">
               <h5 class="card-title">{{collection[i + 2].name}}</h5>
               <footer class="blockquote-footer">

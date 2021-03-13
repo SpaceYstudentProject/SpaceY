@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { CrewComponent } from "./crew/crew.component";
 import { LoginComponent } from "./login/login.component";
+import { RegisterComponent} from "./register/register.component";
 
 const routes: Routes = [
   { path: 'mission', component: MissionComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'blogs', component: BlogsComponent },
   { path: 'crew', component: CrewComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '', component: HomeComponent }
 ];
 

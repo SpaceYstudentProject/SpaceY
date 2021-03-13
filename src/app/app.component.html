@@ -35,20 +35,28 @@
          (click)="onClickMenu($event)">Starlink</a>
       <a routerLink="/blogs" class="nav-link list-group-item list-group-item-light disabled"
          style="height: 47vh;"></a>
-      <a routerLink="/login" class="nav-link list-group-item list-group-item-action list-group-item-light"
-         (click)="onClickMenu($event)">Sign in</a>
+      <div class="row">
+        <div class="col">
+          <a routerLink="/login" style="width: 90%; position: absolute" class="nav-link list-group-item list-group-item-action list-group-item-light"
+             (click)="onClickMenu($event)">Sign in</a>
+        </div>
+        <div class="col">
+          <a routerLink="/register" style="width: 120%;margin-left: -2.3vh" class="nav-link list-group-item list-group-item-action list-group-item-light"
+             (click)="onClickMenu($event)">Sign up</a>
+        </div>
       </div>
+    </div>
   </div>
   <div class="content">
     <div class="blackout" [class.blackout-active]="menuActive"></div>
     <router-outlet></router-outlet>
-    <footer class="text-center text-lg-start">
-      <div class="image text-center text-light p-3" style="background-color: rgb(29,29,29);">
-        SpaceY © 2021
-        <a href="https://github.com/SpaceYstudentProject/SpaceY">
-          <img id="image-git" src="./assets/svg/github-logo.svg"/>
-        </a>
-      </div>
-    </footer>
   </div>
 </div>
+<footer class="text-center text-lg-start" id="footer-main">
+  <div class="image text-center text-light p-3" style="background-color: rgb(29,29,29);">
+    SpaceY © 2021
+    <a href="https://github.com/SpaceYstudentProject/SpaceY">
+      <img id="image-git" src="./assets/svg/github-logo.svg"/>
+    </a>
+  </div>
+</footer>

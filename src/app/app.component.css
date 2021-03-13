@@ -2,13 +2,18 @@
   background: rgb(29,29,29);
 }
 
+.navigation {
+  height: 59px;
+}
+
 .list-group-item:hover {
   background-color: black;
 }
 
 .wrapper {
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
+  min-height: calc(100vh - 115.3px);
 }
 
 .menu {
@@ -26,9 +31,6 @@
   transform: translateX(0%);
 }
 
-.content{
-  padding-top: 3em;
-}
 .blackout {
   margin-top: -3em;
   position: absolute;
@@ -42,7 +44,8 @@
 .blackout-active {
   opacity: 0.5;
   z-index: 10;
-  height: 100%;
+  height: 150%;
+  overflow: hidden;
 }
 
 .menu-btn {
@@ -109,4 +112,9 @@
   height: 20px;
   border-radius: 50%;
   border: 10px none;
+}
+
+#footer-main {
+  margin: auto auto 0;
+  width: 100%;
 }
