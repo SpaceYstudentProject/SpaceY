@@ -1,4 +1,9 @@
-import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+} from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +14,10 @@ import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 export class AppComponent {
   title = 'SpaceY';
   menuActive = false;
+
+  constructor(public router: Router) {
+  }
+
   onClickMenu(event: Event): void {
     event.preventDefault();
     this.menuActive = !this.menuActive;
