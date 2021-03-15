@@ -2,23 +2,44 @@
   <label class="text-white-50" id="joinLabel">Join SpaceY</label>
   <label class="text-light" id="createLabel">Create your account</label>
   <main class="content section">
-    <form method="post">
+    <form [formGroup]="registerForm">
       <div class="form-group">
-        <input type="text" class="form-control" id="loginInput" aria-describedby="loginHelp" placeholder="Login"
+        <input type="text" pattern="{{loginPattern}}" formControlName="login" class="form-control"
+               id="loginInput" aria-describedby="loginHelp" placeholder="Login"
                required autofocus>
+        <div *ngIf="login.invalid && login.value != '' && (login.dirty || login.touched)" class="alert alert-danger">
+          <div>Login may only contain alphanumeric characters or single hyphens, and cannot begin with a hyphen</div>
+        </div>
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email"
+        <input type="text" pattern="{{emailPattern}}" class="form-control" formControlName="email"
+               id="emailInput" aria-describedby="emailHelp"
+               placeholder="Email"
                required>
+        <div *ngIf="email.invalid && email.value != '' && (email.dirty || email.touched)" class="alert alert-danger">
+          <div>Email is invalid</div>
+        </div>
       </div>
       <div class="form-group">
         <div class="contact-form row">
           <div class="form-field col-lg-6">
-            <input type="password" class="form-control" id="passwordInput" placeholder="Password" required>
+            <input type="password" pattern="{{passwordPattern}}" formControlName="password"
+                   class="form-control" id="passwordInput" placeholder="Password" required>
+            <div *ngIf="password.invalid && password.value != '' && (password.dirty || password.touched)"
+                 class="alert alert-danger alertPassword">
+              <div>Password is invalid (minimum is 8 characters), needs at least 1 number and 1 letter</div>
+            </div>
           </div>
           <div class="form-field col-lg-6">
-            <input type="password" class="form-control" id="passwordInputRepeat" placeholder="Repeat password" required>
+            <input  type="password" pattern="{{passwordPattern}}" formControlName="passwordRepeat"
+                   class="form-control passwordInputRepeat" placeholder="Repeat password" required>
+            <div *ngIf="passwordRepeat.value != password.value && passwordRepeat.value != '' && (passwordRepeat.dirty || passwordRepeat.touched)"
+                 class="alert alert-danger alertPassword">
+              <div>Please make sure your passwords match</div>
+            </div>
           </div>
+          <label class="password-label text-white-50">Make sure it's at least 8 characters including a number and a
+            letter. </label>
         </div>
       </div>
       <div class="form-check">

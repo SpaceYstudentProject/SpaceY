@@ -1,21 +1,26 @@
 <div class="wrapper">
   <main class="content section">
-    <form method="post">
+    <form [formGroup]="loginForm">
       <img src="assets/png/n-white-bg.png" id="y-logo">
       <div class="form-group">
         <label class="text-light" id="loginLabel">Just read the space news!</label>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="loginInput" aria-describedby="loginHelp" placeholder="Login">
+        <label class="sign-label text-light" id="signLabel">Sing in to SpaceY</label>
       </div>
       <div class="form-group">
-        <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+        <input type="text" pattern="{{loginPattern}}" formControlName="login" class="form-control" id="loginInput"
+               aria-describedby="loginHelp" placeholder="Login" required autofocus/>
+      </div>
+      <div class="form-group">
+        <input type="password" pattern="{{passwordPattern}}" formControlName="password"
+               class="form-control" id="passwordInput" placeholder="Password" required/>
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="check">
         <label class="form-check-label text-light" for="check">Remember me</label>
       </div>
-      <a class="btn btn-outline-light btn-lg" role="button">Sign in</a>
+      <button type="submit" class="btn btn-outline-light btn-lg">Sign in</button>
     </form>
   </main>
 </div>

@@ -10,7 +10,7 @@
 .content {
   border-width: 10px;
   border-color: #eff0f0;
-  padding-top: calc(10vh + 50px);
+  padding-top: calc(5vh + 50px);
   margin: auto;
   width: 28%;
 }
@@ -34,9 +34,16 @@
   display: block;
   text-align:center;
   line-height:150%;
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-bottom: 5vh;
   font-style: italic;
+}
+
+.sign-label {
+  display: block;
+  text-align:center;
+  line-height:150%;
+  font-size: 2em;
 }
 
 #loginInput, #passwordInput {
@@ -55,8 +62,32 @@
 
 #loginInput:focus, #passwordInput:focus, #loginInput:active, #passwordInput:active {
   outline: transparent none 0 !important;
-  box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+  box-shadow: 0 0 0 0 rgba(0,123,255,0) !important;
   color: #eff0f0;
+}
+
+#loginInput:placeholder-shown, #passwordInput:placeholder-shown {
+  outline: transparent none 0 !important;
+  box-shadow: 0 0 0 0 rgba(0,123,255,0) !important;
+  color: #eff0f0 !important;
+  border-color: #eff0f0 !important;
+}
+
+#loginInput:invalid:required,
+#passwordInput:invalid:required {
+  border-color: #ff4f52;
+  color: #ff4f52;
+}
+
+.alert {
+  background: #252626;
+  color: #ff4f52;
+  border-color: #ff4f52;
+  font-size: 0.8em;
+  z-index: 1;
+  margin-top: 5px;
+  width: 28%;
+  position: fixed;
 }
 
 .form-check {
@@ -100,4 +131,10 @@ input[type="checkbox"]+label:hover::before {
 .btn {
   margin-top: 11px;
   width: 100%;
+  outline: transparent none 0 !important;
+}
+
+.btn:focus {
+  outline: transparent none 0 !important;
+  box-shadow: 0 0 0 0 rgba(0,123,255,0) !important;
 }

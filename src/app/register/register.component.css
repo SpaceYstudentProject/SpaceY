@@ -17,21 +17,21 @@
 
 #joinLabel {
   display: block;
-  text-align:center;
-  line-height:150%;
+  text-align: center;
+  line-height: 150%;
   font-size: 1em;
   padding-top: 10vh;
 }
 
 #createLabel {
   display: block;
-  text-align:center;
-  line-height:150%;
+  text-align: center;
+  line-height: 150%;
   font-size: 3em;
   margin-top: -8px;
 }
 
-#loginInput, #emailInput, #passwordInput, #passwordInputRepeat {
+#loginInput, #emailInput, #passwordInput, .passwordInputRepeat {
   background: none;
   display: block;
   width: 100%;
@@ -45,18 +45,64 @@
   color: #eff0f0;
 }
 
-#loginInput:focus, #passwordInput:focus, #emailInput:focus, #passwordInputRepeat:focus, #loginInput:active, #passwordInput:active, #passwordInputRepeat:active, #emailInput:active {
+#loginInput:focus,
+#passwordInput:focus,
+#emailInput:focus,
+.passwordInputRepeat:focus,
+#loginInput:active,
+#passwordInput:active,
+.passwordInputRepeat:active,
+#emailInput:active {
   outline: transparent none 0 !important;
-  box-shadow: 0 0 0 0 rgba(0,123,255,0)!important;
+  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important;
   color: #eff0f0;
 }
 
-/*#loginInput:invalid:required, #emailInput:invalid:required, #passwordInput:invalid:required, #passwordInputRepeat:invalid:required {*/
-/*  border-color: red;*/
-/*  color: red;*/
-/*}*/
+#loginInput:placeholder-shown,
+#passwordInput:placeholder-shown,
+#emailInput:placeholder-shown,
+.passwordInputRepeat:placeholder-shown {
+  outline: transparent none 0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important;
+  color: #eff0f0 !important;
+  border-color: #eff0f0 !important;
+}
+
+#loginInput.ng-invalid:required,
+#emailInput.ng-invalid:required,
+#passwordInput.ng-invalid:required,
+.passwordInputRepeat.ng-invalid:required {
+  border-color: #ff4f52;
+  color: #ff4f52;
+}
+
+.alert {
+  background: #252626;
+  color: #ff4f52;
+  border-color: #ff4f52;
+  font-size: 0.8em;
+  z-index: 1;
+  margin-top: 5px;
+  width: 28%;
+  position: fixed;
+}
+
+.alertPassword {
+  width: calc(14% - 15px);
+}
+
+.password-label {
+  display: block;
+  text-align: justify-all;
+  padding-top: 1vh;
+  line-height: 150%;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-left: 20px;
+}
 
 .form-check {
+  margin-top: -10px;
   margin-left: -20px;
 }
 
@@ -66,12 +112,13 @@ input[type="checkbox"] {
   opacity: 0;
 }
 
-input[type="checkbox"]+label {
+input[type="checkbox"] + label {
   display: inline-flex;
   align-items: center;
   user-select: none;
 }
-input[type="checkbox"]+label::before {
+
+input[type="checkbox"] + label::before {
   content: '';
   display: inline-block;
   width: 1em;
@@ -86,15 +133,20 @@ input[type="checkbox"]+label::before {
   background-size: 50% 50%;
 }
 
-input[type="checkbox"]:checked+label::before {
+input[type="checkbox"]:checked + label::before {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
 }
 
-input[type="checkbox"]+label:hover::before {
+input[type="checkbox"] + label:hover::before {
   background-color: #1d1d1d;
 }
 
 .btn {
   margin-top: 11px;
   width: 100%;
+}
+
+.btn:focus {
+  outline: transparent none 0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important;
 }

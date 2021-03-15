@@ -13,7 +13,7 @@ import { CrewComponent } from './crew/crew.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import { FormsModule } from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
