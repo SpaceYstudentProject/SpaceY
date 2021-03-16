@@ -22,7 +22,7 @@ export class CrewComponent implements OnInit {
   splitBy(number: number, collection: {}) {
     let i;
     let array = [];
-    for (i = 0; i < this.length(collection); i++) {
+    for (i = 0; i < this.floor(number, collection); i++) {
       if(i % number == 0) {
         array.push(i);
       }
@@ -30,11 +30,11 @@ export class CrewComponent implements OnInit {
     return array;
   }
 
-  length(collection: {}) {
+  floor(number: number,collection: {}) {
     length = 0
     for (let i in collection) {
       length++;
     }
-    return length - 1; //bad
+    return length - length % number;
   }
 }

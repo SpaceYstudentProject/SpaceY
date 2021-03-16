@@ -1,24 +1,55 @@
 <div class="wrapper">
   <div class="content">
+    <section class="launch">
+      <ngb-carousel class="no-indicators">
+        <ng-template ngbSlide>
+          <div class="jumbotron jumbotron-fluid jumbotron-launch-1" [ngStyle]="{'background-image': getUrl(0)}">
+            <div class="container">
+              <div class="text-light title-launch-1">Example headline.</div>
+              <p class="lead-1 text-light">Some representative placeholder content for the first slide of the carousel.</p>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="jumbotron jumbotron-fluid jumbotron-launch-2" [ngStyle]="{'background-image': getUrl(1)}">
+            <div class="container">
+              <div class="text-light title-launch-2">Another example headline.</div>
+              <p class="lead-2 text-light">Some representative placeholder content for the second slide of the carousel.</p>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <div class="jumbotron jumbotron-fluid jumbotron-launch-3" [ngStyle]="{'background-image': getUrl(2)}">
+            <div class="container">
+              <div class="text-light title-launch-3">One more for good measure.</div>
+              <p class="lead-3 text-light">Some representative placeholder content for the third slide of the carousel.</p>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      <div class="container">
+        <a class="btn btn-outline-light btn-lg btn-launch" href="#">Learn more</a>
+      </div>
+    </section>
     <section class="article" *ngFor="let items of collection; index as i">
-      <div class="jumbotron jumbotron-fluid" id="jumbotron-even" *ngIf="i % 2 == 0">
+      <div class="jumbotron jumbotron-fluid" id="jumbotron-even" *ngIf="i % 2 == 0" [ngStyle]="{'background-image': getUrl(7)}">
         <div class="container">
           <br>
           <h1 class="display-4">{{items.title}}</h1>
           <p class="lead">{{items.newsSite}}</p>
-          <hr class="my-4">
+          <hr class="my-4 border-dark">
           <p>{{items.summary}}</p>
           <p class="lead">
             <a class="btn btn-outline-dark btn-lg" href="{{items.url}}" role="button">Learn more</a>
           </p>
         </div>
       </div>
-      <div class="jumbotron jumbotron-fluid" id="jumbotron-uneven" *ngIf="i % 2 != 0">
+      <div class="jumbotron jumbotron-fluid" id="jumbotron-uneven" *ngIf="i % 2 != 0" [ngStyle]="{'background-image': getUrl(3)}">
         <div class="container">
           <br>
           <h1 class="display-4 text-light">{{items.title}}</h1>
           <p class="lead text-light">{{items.newsSite}}</p>
-          <hr class="my-4">
+          <hr class="my-4 border-light">
           <p class="text-light">{{items.summary}}</p>
           <p class="lead">
             <a class="btn btn-outline-light btn-lg" href="{{items.url}}" role="button">Learn more</a>
