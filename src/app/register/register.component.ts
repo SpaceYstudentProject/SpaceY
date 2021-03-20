@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 export class RegisterComponent implements OnInit {
   loginPattern = "^[a-zA-Z0-9][a-zA-Z0-9-_\\.]{1,40}$";
   emailPattern = "^[a-zA-Z0-9.!#$%&'*+\\/=?^_`{|}~-]+@[a-zA-Z0-9]{1,40}(?:[a-zA-Z0-9-]{0,40}\n" +
-    "[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,40}[a-zA-Z0-9])?)*$";
+    "[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{1,40}[a-zA-Z0-9])?)*$";
   passwordPattern = "^(?=.*\\d)(?=.*[a-zA-Z])(?!.*\\s).{8,40}$";
 
   registerForm = new FormGroup({

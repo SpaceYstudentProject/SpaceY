@@ -11,6 +11,7 @@
 }
 
 .wrapper {
+  background: #252626;
   position: relative;
   overflow: hidden;
   min-height: calc(100vh - 115.3px);

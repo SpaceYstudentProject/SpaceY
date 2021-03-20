@@ -31,26 +31,14 @@
         <a class="btn btn-outline-light btn-lg btn-launch" href="#">Learn more</a>
       </div>
     </section>
-    <section class="article" *ngFor="let items of collection; index as i">
-      <div class="jumbotron jumbotron-fluid" id="jumbotron-even" *ngIf="i % 2 == 0" [ngStyle]="{'background-image': getUrl(7)}">
+    <section class="article" *ngFor="let items of collection; index as i;">
+      <div class="jumbotron jumbotron-fluid jumbotron-event" [ngStyle]="{'background-image': getUrlFromString(items.imageUrl)}">
         <div class="container">
           <br>
-          <h1 class="display-4">{{items.title}}</h1>
-          <p class="lead">{{items.newsSite}}</p>
-          <hr class="my-4 border-dark">
-          <p>{{items.summary}}</p>
-          <p class="lead">
-            <a class="btn btn-outline-dark btn-lg" href="{{items.url}}" role="button">Learn more</a>
-          </p>
-        </div>
-      </div>
-      <div class="jumbotron jumbotron-fluid" id="jumbotron-uneven" *ngIf="i % 2 != 0" [ngStyle]="{'background-image': getUrl(3)}">
-        <div class="container">
-          <br>
-          <h1 class="display-4 text-light">{{items.title}}</h1>
-          <p class="lead text-light">{{items.newsSite}}</p>
-          <hr class="my-4 border-light">
-          <p class="text-light">{{items.summary}}</p>
+          <div class="text-light h1-event">{{items.title}}</div>
+          <p class="lead text-light lead-event">{{items.newsSite}}</p>
+          <hr class="my-4 border-light hr-event">
+          <p class="text-light decs-event">{{items.summary}}</p>
           <p class="lead">
             <a class="btn btn-outline-light btn-lg" href="{{items.url}}" role="button">Learn more</a>
           </p>

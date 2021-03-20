@@ -1,62 +1,68 @@
-<div class="navigation" *ngIf="router.url != '/login'">
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="min-height: 59px">
-    <a class="navbar-brand" href="">{{title}}</a>
-    <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
-    <!--            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-    <!--      <span class="navbar-toggler-icon"></span>-->
-    <!--    </button>-->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item"><a class="nav-link" routerLink="/mission">Mission</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/starship">Starship</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/launches">Launches</a></li>
-        <li class="nav-item"><a class="nav-link" routerLink="/crew">Crew</a></li>
-      </ul>
-    </div>
-    <form class="form-inline">
-      <div class="menu-btn" [class.open]="menuActive" (click)="onClickMenu($event)">
-        <div class="menu-btn_burger"></div>
+<div class="application">
+  <div class="navigation" *ngIf="router.url != '/login'">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="min-height: 59px">
+      <a class="navbar-brand" href="">{{title}}</a>
+      <!--    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
+      <!--            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+      <!--      <span class="navbar-toggler-icon"></span>-->
+      <!--    </button>-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" routerLink="/mission">Mission</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/starship">Starship</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/launches">Launches</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/crew">Crew</a></li>
+        </ul>
       </div>
-    </form>
-  </nav>
-</div>
-<div class="wrapper" (window:scroll)="onScrollEvent($event)">
-  <div class="menu" [class.menu-active]="menuActive">
-    <div class="list-group list-group-flush" style="height: 100%">
-      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
-         (click)="onClickMenu($event)">Modules</a>
-      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
-         (click)="onClickMenu($event)">Careers</a>
-      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
-         (click)="onClickMenu($event)">Blogs</a>
-      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
-         (click)="onClickMenu($event)">Dragon</a>
-      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
-         (click)="onClickMenu($event)">Starlink</a>
-      <a routerLink="/blogs" class="nav-link list-group-item list-group-item-light disabled"
-         style="height: 47vh;"></a>
-      <div class="row">
-        <div class="col">
-          <a routerLink="/login" style="width: 90%; position: absolute" class="nav-link list-group-item list-group-item-action list-group-item-light"
-             (click)="onClickMenu($event)">Sign in</a>
+      <form class="form-inline">
+        <div class="menu-btn" [class.open]="menuActive" (click)="onClickMenu($event)">
+          <div class="menu-btn_burger"></div>
         </div>
-        <div class="col">
-          <a routerLink="/register" style="width: 120%;margin-left: -2.3vh" class="nav-link list-group-item list-group-item-action list-group-item-light"
-             (click)="onClickMenu($event)">Sign up</a>
+      </form>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="wrapper" (window:scroll)="onScrollEvent($event)">
+      <div class="menu" [class.menu-active]="menuActive">
+        <div class="list-group list-group-flush" style="height: 100%">
+          <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
+             (click)="onClickMenu($event)">Modules</a>
+          <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
+             (click)="onClickMenu($event)">Careers</a>
+          <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
+             (click)="onClickMenu($event)">Blogs</a>
+          <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
+             (click)="onClickMenu($event)">Dragon</a>
+          <a routerLink="/blogs" class="nav-link list-group-item list-group-item-action list-group-item-light"
+             (click)="onClickMenu($event)">Starlink</a>
+          <a routerLink="/blogs" class="nav-link list-group-item list-group-item-light disabled"
+             style="height: 47vh;"></a>
+          <div class="row">
+            <div class="col">
+              <a routerLink="/login" style="width: 90%; position: absolute"
+                 class="nav-link list-group-item list-group-item-action list-group-item-light"
+                 (click)="onClickMenu($event)">Sign in</a>
+            </div>
+            <div class="col">
+              <a routerLink="/register" style="width: 120%;margin-left: -2.3vh"
+                 class="nav-link list-group-item list-group-item-action list-group-item-light"
+                 (click)="onClickMenu($event)">Sign up</a>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="content">
+        <div class="blackout" [class.blackout-active]="menuActive"></div>
+        <router-outlet></router-outlet>
+      </div>
     </div>
-  </div>
-  <div class="content">
-    <div class="blackout" [class.blackout-active]="menuActive"></div>
-    <router-outlet></router-outlet>
+    <footer class="text-center text-lg-start" id="footer-main">
+      <div class="image text-center text-light p-3" style="background-color: rgb(29,29,29);">
+        SpaceY © 2021
+        <a href="https://github.com/SpaceYstudentProject/SpaceY">
+          <img id="image-git" src="./assets/svg/github-logo.svg"/>
+        </a>
+      </div>
+    </footer>
   </div>
 </div>
-<footer class="text-center text-lg-start" id="footer-main">
-  <div class="image text-center text-light p-3" style="background-color: rgb(29,29,29);">
-    SpaceY © 2021
-    <a href="https://github.com/SpaceYstudentProject/SpaceY">
-      <img id="image-git" src="./assets/svg/github-logo.svg"/>
-    </a>
-  </div>
-</footer>
