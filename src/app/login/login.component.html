@@ -9,18 +9,30 @@
         <label class="sign-label text-light" id="signLabel">Sing in to SpaceY</label>
       </div>
       <div class="form-group">
-        <input type="text" pattern="{{loginPattern}}" formControlName="login" class="form-control" id="loginInput"
-               aria-describedby="loginHelp" placeholder="Login" required autofocus/>
+        <input type="text" pattern="{{loginPattern}}" formControlName="login" (ngModelChange)="loginChange()"
+               class="form-control input"
+               aria-describedby="loginHelp"  placeholder="Login" required autofocus/>
+        <hr class="line" *ngIf="isLoginInvalid">
+        <div *ngIf="isLoginInvalid"
+             class="alert alert-danger">
+          <div>Login is invalid</div>
+        </div>
       </div>
       <div class="form-group">
         <input type="password" pattern="{{passwordPattern}}" formControlName="password"
-               class="form-control" id="passwordInput" placeholder="Password" required/>
+               (ngModelChange)="passwordChange()"
+               class="form-control input" placeholder="Password" required/>
+        <hr class="line" *ngIf="isLoginInvalid">
+        <div *ngIf="isPasswordInvalid"
+             class="alert alert-danger">
+          <div>Password is invalid</div>
+        </div>
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="check">
         <label class="form-check-label text-light" for="check">Remember me</label>
       </div>
-      <button type="submit" class="btn btn-outline-light btn-lg">Sign in</button>
+      <button type="submit" class="btn btn-outline-light btn-lg" (click)="submit($event)">Sign in</button>
     </form>
   </main>
 </div>

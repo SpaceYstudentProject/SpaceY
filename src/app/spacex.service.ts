@@ -11,4 +11,9 @@ export class SpacexService {
   getData(path: string) {
     return this.http.get(this.url + path);
   }
+
+  postData(data) {
+    console.log(data);
+    // return this.http.post()
+  }
 }

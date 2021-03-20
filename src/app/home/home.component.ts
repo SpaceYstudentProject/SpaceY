@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.spaceDevsService.getData('articles').subscribe((result) => {
       this.collection = result;
-      console.log(this.collection);
     });
 
     this.random = [];
