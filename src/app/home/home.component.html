@@ -5,6 +5,7 @@
         <ng-template ngbSlide>
           <div class="jumbotron jumbotron-fluid jumbotron-launch-1" [ngStyle]="{'background-image': getUrl(0)}">
             <div class="container">
+              <img src="assets/png/success.png" width="32px" height="32px">
               <div class="text-light title-launch-1">{{upcoming.docs[0].payloads[0].name}}</div>
               <p class="lead-1 text-light">{{upcoming.docs[0].payloads[0].type}}</p>
             </div>
@@ -13,6 +14,7 @@
         <ng-template ngbSlide>
           <div class="jumbotron jumbotron-fluid jumbotron-launch-2" [ngStyle]="{'background-image': getUrl(1)}">
             <div class="container">
+              <img src="assets/png/error.png" width="32px" height="32px">
               <div class="text-light title-launch-2">{{upcoming.docs[1].payloads[0].name}}</div>
               <p class="lead-2 text-light">{{upcoming.docs[1].payloads[0].type}}</p>
             </div>
