@@ -19,9 +19,58 @@ export class RegisterComponent implements OnInit {
     passwordRepeat: new FormControl("", Validators.required)
   })
 
+  isLoginInvalid = false;
+  isPasswordInvalid = false;
+  isEmailInvalid = false;
+  isPasswordRepeatInvalid = false;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  submit(event: Event) {
+    event.preventDefault();
+    if(this.canSubmit()) {
+      console.log(this.registerForm.value);
+    }
+    else {
+      if(this.login.invalid)
+        this.isLoginInvalid = true;
+      if(this.email.invalid)
+        this.isEmailInvalid = true;
+      if(this.password.invalid)
+        this.isPasswordInvalid = true;
+      if(this.passwordRepeat.invalid)
+        this.isPasswordRepeatInvalid = true;
+    }
+  }
+
+  canSubmit() {
+    return !Validators.required(this.login)
+      && !Validators.required(this.email)
+      && !Validators.required(this.password)
+      && !Validators.required(this.passwordRepeat)
+      && !this.login.invalid
+      && !this.email.invalid
+      && !this.password.invalid
+      && !this.passwordRepeat.invalid;
+  }
+
+  loginChange() {
+    this.isLoginInvalid = false;
+  }
+
+  emailChange() {
+    this.isEmailInvalid = false;
+  }
+
+  passwordChange() {
+    this.isPasswordInvalid = false;
+  }
+
+  passwordRepeatChange() {
+    this.isPasswordRepeatInvalid = false;
   }
 
   get login() { return this.registerForm.get("login"); }

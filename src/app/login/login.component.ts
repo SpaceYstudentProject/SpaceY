@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   submit(event: Event) {
     event.preventDefault();
-    if(!Validators.required(this.login) && !Validators.required(this.password) && !this.login.invalid && !this.password.invalid) {
+    if(this.canSubmit()) {
       this.spacexService.postData(this.loginForm.value);
     }
     else {
@@ -36,6 +36,13 @@ export class LoginComponent implements OnInit {
       if(this.password.invalid)
         this.isPasswordInvalid = true;
     }
+  }
+
+  canSubmit() {
+    return !Validators.required(this.login)
+      && !Validators.required(this.password)
+      && !this.login.invalid
+      && !this.password.invalid;
   }
 
   loginChange() {

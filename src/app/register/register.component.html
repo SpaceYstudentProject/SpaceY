@@ -4,36 +4,40 @@
   <main class="content section">
     <form [formGroup]="registerForm">
       <div class="form-group">
-        <input type="text" pattern="{{loginPattern}}" formControlName="login" class="form-control"
-               id="loginInput" aria-describedby="loginHelp" placeholder="Login"
+        <input type="text" (ngModelChange)="loginChange()" pattern="{{loginPattern}}" formControlName="login" class="form-control input"
+               aria-describedby="loginHelp" placeholder="Login"
                required autofocus>
-        <div *ngIf="login.invalid && login.value != '' && (login.dirty || login.touched)" class="alert alert-danger">
+        <hr class="line" *ngIf="isLoginInvalid">
+        <div *ngIf="(login.invalid && login.value != '' && (login.dirty || login.touched)) || isLoginInvalid" class="alert alert-danger">
           <div>Login may only contain alphanumeric characters or single hyphens, and cannot begin with a hyphen</div>
         </div>
       </div>
       <div class="form-group">
-        <input type="text" pattern="{{emailPattern}}" class="form-control" formControlName="email"
-               id="emailInput" aria-describedby="emailHelp"
+        <input type="text" (ngModelChange)="emailChange()" pattern="{{emailPattern}}" class="form-control input" formControlName="email"
+               aria-describedby="emailHelp"
                placeholder="Email"
                required>
-        <div *ngIf="email.invalid && email.value != '' && (email.dirty || email.touched)" class="alert alert-danger">
+        <hr class="line" *ngIf="isEmailInvalid">
+        <div *ngIf="(email.invalid && email.value != '' && (email.dirty || email.touched)) || isEmailInvalid" class="alert alert-danger">
           <div>Email is invalid</div>
         </div>
       </div>
       <div class="form-group">
         <div class="contact-form row">
           <div class="form-field col-lg-6">
-            <input type="password" pattern="{{passwordPattern}}" formControlName="password"
-                   class="form-control" id="passwordInput" placeholder="Password" required>
-            <div *ngIf="password.invalid && password.value != '' && (password.dirty || password.touched)"
+            <input type="password" (ngModelChange)="passwordChange()" pattern="{{passwordPattern}}" formControlName="password"
+                   class="form-control input" placeholder="Password" required>
+            <hr class="line" *ngIf="isPasswordInvalid">
+            <div *ngIf="(password.invalid && password.value != '' && (password.dirty || password.touched)) || isPasswordInvalid"
                  class="alert alert-danger alertPassword">
               <div>Password is invalid (minimum is 8 characters), needs at least 1 number and 1 letter</div>
             </div>
           </div>
           <div class="form-field col-lg-6">
-            <input  type="password" pattern="{{passwordPattern}}" formControlName="passwordRepeat"
-                   class="form-control passwordInputRepeat" placeholder="Repeat password" required>
-            <div *ngIf="passwordRepeat.value != password.value && passwordRepeat.value != '' && (passwordRepeat.dirty || passwordRepeat.touched)"
+            <input  type="password" (ngModelChange)="passwordRepeatChange()" pattern="{{passwordPattern}}" formControlName="passwordRepeat"
+                   class="form-control input" placeholder="Repeat password" required>
+            <hr class="line" *ngIf="isPasswordRepeatInvalid">
+            <div *ngIf="(passwordRepeat.value != password.value && passwordRepeat.value != '' && (passwordRepeat.dirty || passwordRepeat.touched)) || isPasswordRepeatInvalid"
                  class="alert alert-danger alertPassword">
               <div>Please make sure your passwords match</div>
             </div>
@@ -46,7 +50,7 @@
         <input type="checkbox" class="form-check-input" id="check">
         <label class="form-check-label text-light" for="check">Remember me</label>
       </div>
-      <input type="submit" class="btn btn-outline-light btn-lg" role="button" value="Create account">
+      <button type="submit" class="btn btn-outline-light btn-lg" (click)="submit($event)">Create account</button>
     </form>
   </main>
 </div>

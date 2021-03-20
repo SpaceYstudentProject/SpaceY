@@ -22,7 +22,7 @@
         <input type="password" pattern="{{passwordPattern}}" formControlName="password"
                (ngModelChange)="passwordChange()"
                class="form-control input" placeholder="Password" required/>
-        <hr class="line" *ngIf="isLoginInvalid">
+        <hr class="line" *ngIf="isPasswordInvalid">
         <div *ngIf="isPasswordInvalid"
              class="alert alert-danger">
           <div>Password is invalid</div>
