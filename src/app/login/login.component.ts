@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   isLoginInvalid = false;
   isPasswordInvalid = false;
 
-  constructor(private spacexService: SpacexService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   submit(event: Event) {
     event.preventDefault();
     if(this.canSubmit()) {
-      this.spacexService.postData(this.loginForm.value);
+      console.log(this.loginForm.value); //post
     }
     else {
       if(this.login.invalid) {

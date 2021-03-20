@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
   submit(event: Event) {
     event.preventDefault();
     if(this.canSubmit()) {
-      console.log(this.registerForm.value);
+      console.log(this.registerForm.value); //post
     }
     else {
       if(this.login.invalid)

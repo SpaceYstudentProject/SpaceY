@@ -5,24 +5,24 @@
         <ng-template ngbSlide>
           <div class="jumbotron jumbotron-fluid jumbotron-launch-1" [ngStyle]="{'background-image': getUrl(0)}">
             <div class="container">
-              <div class="text-light title-launch-1">Example headline.</div>
-              <p class="lead-1 text-light">Some representative placeholder content for the first slide of the carousel.</p>
+              <div class="text-light title-launch-1">{{upcoming.docs[0].payloads[0].name}}</div>
+              <p class="lead-1 text-light">{{upcoming.docs[0].payloads[0].type}}</p>
             </div>
           </div>
         </ng-template>
         <ng-template ngbSlide>
           <div class="jumbotron jumbotron-fluid jumbotron-launch-2" [ngStyle]="{'background-image': getUrl(1)}">
             <div class="container">
-              <div class="text-light title-launch-2">Another example headline.</div>
-              <p class="lead-2 text-light">Some representative placeholder content for the second slide of the carousel.</p>
+              <div class="text-light title-launch-2">{{upcoming.docs[1].payloads[0].name}}</div>
+              <p class="lead-2 text-light">{{upcoming.docs[1].payloads[0].type}}</p>
             </div>
           </div>
         </ng-template>
         <ng-template ngbSlide>
           <div class="jumbotron jumbotron-fluid jumbotron-launch-3" [ngStyle]="{'background-image': getUrl(2)}">
             <div class="container">
-              <div class="text-light title-launch-3">One more for good measure.</div>
-              <p class="lead-3 text-light">Some representative placeholder content for the third slide of the carousel.</p>
+              <div class="text-light title-launch-3">{{upcoming.docs[2].payloads[0].name}}</div>
+              <p class="lead-3 text-light">{{upcoming.docs[2].payloads[0].type}}</p>
             </div>
           </div>
         </ng-template>
