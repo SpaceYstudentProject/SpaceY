@@ -36,4 +36,12 @@ export class HomeComponent implements OnInit {
   getUrlFromString(url: string) {
     return "url(\'" + url + "\')";
   }
+
+  getDate(unix: number) {
+    return new Date(unix).toLocaleDateString("en-US")
+  }
+
+  getTime(unix: number) {
+    return new Date(unix).toLocaleTimeString("en-US")
+  }
 }

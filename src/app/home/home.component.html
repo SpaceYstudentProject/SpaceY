@@ -3,38 +3,120 @@
     <section class="launch">
       <ngb-carousel class="no-indicators">
         <ng-template ngbSlide>
-          <div class="jumbotron jumbotron-fluid jumbotron-launch-1" [ngStyle]="{'background-image': getUrl(0)}">
+          <div class="jumbotron jumbotron-fluid jumbotron-launch-1"
+               [ngStyle]="{'background-image': 'url(assets/jpg/backgrounds/launch-1.jpg)'}">
             <div class="container">
-              <img src="assets/png/success.png" width="32px" height="32px">
+              <img src="assets/png/star.png" class="btn-custom-star" alt=""/>
               <div class="text-light title-launch-1">{{upcoming.docs[0].payloads[0].name}}</div>
               <p class="lead-1 text-light">{{upcoming.docs[0].payloads[0].type}}</p>
+              <div class="row custom-row-1">
+                <div class="caption-1">
+                  <img src="{{upcoming.docs[0].links.patch.small}}"/>
+                </div>
+                <div class="col custom-col-1">
+                  <div class="container-1">
+                    <div class="title-1 text-light col-lg-6">Launch date</div>
+                    <div
+                      class="info-1 text-light col-lg-6">{{getDate(upcoming.docs[0].date_unix * 1000) + ', ' + getTime(upcoming.docs[0].date_unix * 1000)}}</div>
+                  </div>
+                  <div class="container-1">
+                    <div class="title-1 text-light col-lg-6">Company</div>
+                    <div class="info-1 text-light col-lg-6">{{upcoming.docs[0].payloads[0].customers[0]}}</div>
+                  </div>
+                  <div class="container-1">
+                    <div class="title-1 text-light col-lg-6">Country</div>
+                    <div class="row row-country-1">
+                      <div class="info-1 text-light">{{upcoming.docs[0].payloads[0].nationalities[0]}}</div>
+                      <img src="assets/png/flags/USA.png" alt="" class="img-usa">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </ng-template>
         <ng-template ngbSlide>
-          <div class="jumbotron jumbotron-fluid jumbotron-launch-2" [ngStyle]="{'background-image': getUrl(1)}">
+          <div class="jumbotron jumbotron-fluid jumbotron-launch-2"
+               [ngStyle]="{'background-image': 'url(assets/file/backgrounds/launch-2)'}">
             <div class="container">
-              <img src="assets/png/error.png" width="32px" height="32px">
+              <img src="assets/png/star.png" class="btn-custom-star" alt=""/>
               <div class="text-light title-launch-2">{{upcoming.docs[1].payloads[0].name}}</div>
               <p class="lead-2 text-light">{{upcoming.docs[1].payloads[0].type}}</p>
+              <div class="custom-row-2">
+                <div class="container-2-left">
+                  <div class="title-2-left text-light col-lg-6">Country</div>
+                  <div class="info-2-left text-light col-lg-6">{{upcoming.docs[1].payloads[0].nationalities[0]}}</div>
+                </div>
+                <div class="caption-2">
+                  <img src="{{upcoming.docs[1].links.patch.small}}"/>
+                </div>
+                <div class="container-2-right">
+                  <div class="title-2-right text-light col-lg-6">Launch date</div>
+                  <div
+                    class="info-2-right text-light col-lg-6">{{getDate(upcoming.docs[1].date_unix * 1000) + ', ' + getTime(upcoming.docs[1].date_unix * 1000)}}</div>
+                </div>
+              </div>
+              <div class="container-2-bottom">
+                <div class="title-2-bottom text-light">Company</div>
+                <div class="row row-country-2">
+                  <div class="info-2-bottom text-light">{{upcoming.docs[1].payloads[0].nationalities[0]}}</div>
+                  <img src="assets/png/flags/USA.png" alt="" class="img-usa">
+                </div>
+              </div>
             </div>
           </div>
         </ng-template>
         <ng-template ngbSlide>
-          <div class="jumbotron jumbotron-fluid jumbotron-launch-3" [ngStyle]="{'background-image': getUrl(2)}">
+          <div class="jumbotron jumbotron-fluid jumbotron-launch-3"
+               [ngStyle]="{'background-image': 'url(assets/file/backgrounds/launch-3.webp)'}">
             <div class="container">
+              <img src="assets/png/star.png" class="btn-custom-star" alt=""/>
               <div class="text-light title-launch-3">{{upcoming.docs[2].payloads[0].name}}</div>
               <p class="lead-3 text-light">{{upcoming.docs[2].payloads[0].type}}</p>
+              <div class="custom-row-3">
+                <div class="custom-col-3">
+                  <div class="container-3">
+                    <div class="title-3 text-light">Launch date</div>
+                    <div
+                      class="info-3 text-light">{{getDate(upcoming.docs[2].date_unix * 1000) + ', ' + getTime(upcoming.docs[0].date_unix * 1000)}}</div>
+                  </div>
+                  <div class="container-3">
+                    <div class="title-3 text-light">Company</div>
+                    <div class="info-3 text-light">{{upcoming.docs[2].payloads[0].customers[0]}}</div>
+                  </div>
+                  <div class="container-3">
+                    <div class="title-3 text-light">Country</div>
+                    <div class="row row-country-3">
+                      <div class="info-3 text-light">{{upcoming.docs[2].payloads[0].nationalities[0]}}</div>
+                      <img src="assets/png/flags/USA.png" alt="" class="img-usa">
+                    </div>
+                  </div>
+                </div>
+                <div class="caption-3">
+                  <img src="{{upcoming.docs[2].links.patch.small}}" class="img-patch-1"/>
+                </div>
+              </div>
             </div>
           </div>
         </ng-template>
       </ngb-carousel>
       <div class="container">
         <a class="btn btn-outline-light btn-lg btn-launch" href="#">Learn more</a>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [ngStyle]="{'width': '34%'}" aria-valuenow="66" aria-valuemin="0"
+               aria-valuemax="100"></div>
+        </div>
+        <div class="success">34</div>
+        <div class="divider-1">/</div>
+        <div class="divider-2">/</div>
+        <div class="error">66</div>
+        <img src="assets/png/success.png" class="btn-custom-success" alt="S"/>
+        <img src="assets/png/error.png" class="btn-custom-error" alt="E"/>
       </div>
     </section>
     <section class="article" *ngFor="let items of collection; index as i;">
-      <div class="jumbotron jumbotron-fluid jumbotron-event" [ngStyle]="{'background-image': getUrlFromString(items.imageUrl)}">
+      <div class="jumbotron jumbotron-fluid jumbotron-event"
+           [ngStyle]="{'background-image': getUrlFromString(items.imageUrl)}">
         <div class="container">
           <br>
           <div class="text-light h1-event">{{items.title}}</div>
