@@ -351,6 +351,25 @@ ngb-carousel {
   text-shadow: 0 0 2px black;
 }
 
+.success-animation {
+  animation-name: animation;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animation {
+  0% {
+    background-color: #eff0f0;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
 .divider-1 {
   position: relative;
   display: flex;

@@ -1,0 +1,151 @@
+.wrapper {
+  background-color: #252626;
+  align-content: center;
+  padding: 7vh 15vh 3vh;
+}
+
+.card-columns {
+  grid-column-gap: 3vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.card {
+  border-width: 2px;
+  border-color: #eff0f0;
+  margin-bottom: 3vh;
+  transition: width 0.5s,
+              min-width 0.5s,
+              margin-left 0.5s,
+              padding-right 0.5s,
+              margin-right 0.5s,
+              padding-left 0.5s,
+              background-color 0.5s;
+}
+
+.card:nth-child(2n - 1) {
+  text-align: left;
+}
+
+.card:nth-child(2n) {
+  text-align: right;
+}
+
+.card:nth-child(2n - 1):hover {
+  margin-left: -30px;
+  width: calc(100% + 30px);
+}
+
+.card:nth-child(2n):hover {
+  width: calc(100% + 30px);
+}
+
+.card-body {
+  background: no-repeat center;
+  background-size: cover;
+}
+
+.card:nth-child(2n - 1) .btn-custom-star {
+  position: absolute;
+  margin-left: 91%;
+  margin-top: -12px;
+  z-index: 5;
+  color: #eff0f0;
+  font-weight: bolder;
+  border: none;
+  width: 20px;
+  height: 20px;
+  text-shadow: 0 0 2px black;
+
+  transition: width 0.5s,
+  min-width 0.5s,
+  margin-left 0.5s,
+  padding-right 0.5s,
+  margin-right 0.5s,
+  padding-left 0.5s,
+  background-color 0.5s;
+}
+
+.card:nth-child(2n) .btn-custom-star {
+  position: absolute;
+  margin-left: calc(-95% + 2px);
+  margin-top: -12px;
+  z-index: 5;
+  color: #eff0f0;
+  font-weight: bolder;
+  border: none;
+  width: 20px;
+  height: 20px;
+  text-shadow: 0 0 2px black;
+
+  transition: width 0.5s,
+  min-width 0.5s,
+  margin-left 0.5s,
+  padding-right 0.5s,
+  margin-right 0.5s,
+  padding-left 0.5s,
+  background-color 0.5s;
+}
+
+.card:nth-child(2n - 1):hover .btn-custom-star {
+  margin-left: calc(91% + 3px);
+}
+.card:nth-child(2n):hover .btn-custom-star {
+  margin-left: calc(-95% + 1px);
+}
+
+.card:nth-child(2n - 1) .card-date {
+  margin-top: -12px;
+  position: absolute;
+  margin-left: 63%;
+  text-shadow: 0 0 5px black;
+  color: #eff0f0;
+  font-size: 14px;
+
+  transition: width 0.5s,
+  min-width 0.5s,
+  margin-left 0.5s,
+  padding-right 0.5s,
+  margin-right 0.5s,
+  padding-left 0.5s,
+  background-color 0.5s;
+}
+
+.card:nth-child(2n) .card-date {
+  margin-top: -12px;
+  margin-left: 4%;
+  position: absolute;
+  text-shadow: 0 0 5px black;
+  color: #eff0f0;
+  font-size: 14px;
+
+  transition: width 0.5s,
+  min-width 0.5s,
+  margin-left 0.5s,
+  padding-right 0.5s,
+  margin-right 0.5s,
+  padding-left 0.5s,
+  background-color 0.5s;
+}
+
+.card:nth-child(2n):hover .card-date {
+  margin-left: 6%;
+}
+
+.card-title {
+  height: 50px;
+  overflow: hidden;
+  text-transform:uppercase;
+  text-shadow: 0 0 5px black;
+  color: #eff0f0;
+}
+
+.card-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.3em;
+  height: 2.65em;
+  text-shadow: 0 0 5px black;
+  color: #eff0f0;
+}

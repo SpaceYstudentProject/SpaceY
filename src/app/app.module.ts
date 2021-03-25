@@ -14,6 +14,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule} from "@angular/forms";
+import { UpcomingComponent } from './upcoming/upcoming.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReactiveFormsModule} from "@angular/forms";
     BlogsComponent,
     CrewComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    UpcomingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="card-columns">
+      <div class="card" *ngFor="let items of collection; index as index">
+        <div class="card-body" [ngStyle]="{'background-image': getBackgroundUrl(index)}"
+             ngSwitch="{{items.details}}">
+          <img src="assets/png/star.png" class="btn-custom-star" alt=""/>
+          <div class="card-date">{{getDate(items.date_unix * 1000) + ', ' + getTime(items.date_unix * 1000)}}</div>
+          <h5 class="card-title">{{items.name}}</h5>
+          <p *ngSwitchCase="''" class="card-text"><br>No description provided</p>
+          <p *ngSwitchDefault class="card-text">{{items.details}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

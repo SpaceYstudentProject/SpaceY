@@ -8,10 +8,12 @@ import { BlogsComponent } from './blogs/blogs.component';
 import { CrewComponent } from "./crew/crew.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent} from "./register/register.component";
+import { UpcomingComponent } from "./upcoming/upcoming.component";
 
 const routes: Routes = [
   { path: 'mission', component: MissionComponent },
   { path: 'starship', component: StarshipComponent },
+  { path: 'launches/upcoming', component: UpcomingComponent },
   { path: 'launches', component: LaunchesComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'crew', component: CrewComponent },

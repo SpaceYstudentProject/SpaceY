@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
     'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1', //bottom
     'https://images.unsplash.com/photo-1541185933-55ad9888f1df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80' //bottom
   ];
+  isSlid = false;
+  success = 34;
 
   constructor(private spaceDevsService: SpaceDevsService, private spacexService: SpacexService) {
   }
@@ -43,5 +45,16 @@ export class HomeComponent implements OnInit {
 
   getTime(unix: number) {
     return new Date(unix).toLocaleTimeString("en-US")
+  }
+
+  log(message: string) {
+    if(!this.isSlid) {
+      console.log(message);
+      this.success = 18;
+      this.isSlid = !this.isSlid;
+    }
+    else {
+      this.isSlid = !this.isSlid;
+    }
   }
 }
