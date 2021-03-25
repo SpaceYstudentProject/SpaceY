@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {SpacexService} from "../spacex.service";
 
 @Component({
@@ -10,7 +11,7 @@ export class UpcomingComponent implements OnInit {
 
   collection = {};
 
-  constructor(private spacex: SpacexService) {
+  constructor(private spacex: SpacexService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -29,6 +30,10 @@ export class UpcomingComponent implements OnInit {
 
   getTime(unix: number) {
     return new Date(unix).toLocaleTimeString("en-US")
+  }
+
+  navigate(id: number) {
+    this.router.navigate(['/launches/' + id]).then(r => {});
   }
 
 }

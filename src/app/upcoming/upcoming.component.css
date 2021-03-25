@@ -14,6 +14,8 @@
   border-width: 2px;
   border-color: #eff0f0;
   margin-bottom: 3vh;
+  text-decoration: none !important;
+
   transition: width 0.5s,
               min-width 0.5s,
               margin-left 0.5s,

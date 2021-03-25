@@ -9,12 +9,14 @@ import { CrewComponent } from "./crew/crew.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent} from "./register/register.component";
 import { UpcomingComponent } from "./upcoming/upcoming.component";
+import { LaunchDetailsComponent } from "./launch-details/launch-details.component";
 
 const routes: Routes = [
   { path: 'mission', component: MissionComponent },
   { path: 'starship', component: StarshipComponent },
   { path: 'launches/upcoming', component: UpcomingComponent },
   { path: 'launches', component: LaunchesComponent },
+  { path: 'launches/:id', component: LaunchDetailsComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'crew', component: CrewComponent },
   { path: 'login', component: LoginComponent },

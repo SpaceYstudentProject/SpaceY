@@ -1,0 +1,164 @@
+.wrapper {
+  background-color: #252626;
+}
+
+.section-jumbotron {
+  background: no-repeat center;
+  background-size: cover;
+  filter: grayscale(80%);
+  height: calc(41em - 42.3px);
+  border-radius: 0;
+}
+
+.container-body {
+  background: no-repeat center;
+  background-size: cover;
+  padding-top: 7em;
+  height: 30em;
+  box-shadow: 0 0 10px 0 black;
+}
+
+.btn-custom-star {
+  z-index: 5;
+  margin-top: -12em;
+  color: #eff0f0;
+  font-weight: bolder;
+  border: none;
+  width: 32px;
+  height: 32px;
+  text-shadow: 0 0 2px black;
+}
+
+.text-header {
+  color: #eff0f0;
+  font-size: 72px;
+  text-transform:uppercase;
+  text-shadow: 0 0 5px black;
+}
+
+.lead {
+  color: #eff0f0;
+  font-style: italic;
+  text-shadow: 0 0 5px black;
+  padding-right: 3em;
+  padding-left: 3em;
+}
+
+.container-buttons {
+  padding-bottom: 5em;
+  margin-top: -8em;
+}
+
+.progress {
+  position: relative;
+  z-index: 1;
+  margin-top: -5em;
+  margin-left: auto;
+  width: 15em;
+  height: 5px;
+  background-color: #ff4f52;
+  margin-right: 4em;
+  text-shadow: 0 0 2px black;
+  filter: grayscale(0) !important;
+}
+
+.success {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  z-index: 1;
+  margin-top: -2em;
+  margin-left: auto;
+  color: #007bff;
+  font-weight: bolder;
+  margin-right: 9em;
+  text-shadow: 0 0 2px black;
+}
+
+.divider-1 {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  z-index: 1;
+  margin-top: -1.5em;
+  margin-left: auto;
+  margin-right: 8.3em;
+  background: #007bff;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.divider-2 {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  z-index: 1;
+  margin-top: -1.5em;
+  margin-left: auto;
+  margin-right: 8.2em;
+  background: #ff4f52;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  z-index: 1;
+  margin-top: -1.5em;
+  margin-left: auto;
+  color: #ff4f52;
+  font-weight: bolder;
+  margin-right: 6.8em;
+  text-shadow: 0 0 2px black;
+}
+
+.progress-bar {
+  background-color: #007bff;
+  text-shadow: 0 0 2px black;
+}
+
+.btn-custom-success {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  z-index: 1;
+  margin-top: -0.8em;
+  margin-left: auto;
+  color: #007bff;
+  font-weight: bolder;
+  margin-right: 15em;
+  text-shadow: 0 0 2px black;
+  width: 32px;
+  height: 32px;
+}
+
+.btn-custom-error {
+  position: relative;
+  display: flex;
+  justify-content: right;
+  z-index: 1;
+  margin-top: -2em;
+  margin-left: auto;
+  font-weight: bolder;
+  margin-right: 0;
+  border: none;
+  width: 32px;
+  height: 32px;
+  text-shadow: 0 0 2px black;
+}
+
+.spacer {
+  background: linear-gradient(#1d1d1d, black);
+  height: 18px;
+  /*opacity: 0.7;*/
+  margin-top: -9px;
+}
+
+.rocket-section {
+  background-image: url('src/assets/jpg/backgrounds/scroll-background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}

@@ -10,7 +10,7 @@
           <p *ngSwitchCase="''" class="card-text">No description provided</p>
           <p *ngSwitchDefault class="card-text">{{items.details}}</p>
           <p class="lead">
-            <a class="btn btn-outline-dark btn-lg" href="#" role="button">Learn more</a>
+            <button class="btn btn-outline-dark btn-lg" (click)="navigate(items.id)">Learn more</button>
           </p>
         </div>
       </div>

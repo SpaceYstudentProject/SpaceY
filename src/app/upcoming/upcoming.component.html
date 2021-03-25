@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <div class="card-columns">
-      <div class="card" *ngFor="let items of collection; index as index">
+      <div class="card" *ngFor="let items of collection; index as index" (click)="navigate(items.id)">
         <div class="card-body" [ngStyle]="{'background-image': getBackgroundUrl(index)}"
              ngSwitch="{{items.details}}">
           <img src="assets/png/star.png" class="btn-custom-star" alt=""/>

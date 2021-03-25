@@ -1,0 +1,65 @@
+<div class="wrapper">
+  <main role="main">
+    <section class="jumbotron text-right section-jumbotron" (window:scroll)="onScrollEvent($event)"
+             [ngStyle]="{'background-image': 'url(assets/jpg/backgrounds/launch-current.jpg)' }">
+      <div class="container container-body" ngSwitch="{{launch.details}}"
+           [ngStyle]="{'background-image': 'url(assets/jpg/backgrounds/launch-current.jpg)'}">
+        <img src="assets/png/star.png" class="btn-custom-star" alt=""/>
+        <h1 class="jumbotron-heading text-header text-center">{{launch.name}}</h1>
+        <p class="lead text-center" *ngSwitchCase="''">SpaceX designs, manufactures and launches advanced rockets and
+          spacecraft.</p>
+        <p class="lead text-center" *ngSwitchDefault>{{launch.details}}</p>
+      </div>
+    </section>
+    <div class="container">
+      <div class="container-buttons">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [ngStyle]="{'width': '34%'}" aria-valuenow="66"
+               aria-valuemin="0"
+               aria-valuemax="100"></div>
+        </div>
+        <div class="success">34</div>
+        <div class="divider-1">/</div>
+        <div class="divider-2">/</div>
+        <div class="error">66</div>
+        <img src="assets/png/success.png" class="btn-custom-success" alt="S"/>
+        <img src="assets/png/error.png" class="btn-custom-error" alt="E"/>
+      </div>
+    </div>
+    <section class="rocket-section text-center">
+      <div class="spacer">
+      </div>
+      <div class="container rocket-container">
+        <br>
+        <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+          <img src="assets/png/patch-not-found.png" alt=""/>
+        </div>
+        <br>
+        <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+          <img src="assets/png/patch-not-found.png" alt=""/>
+        </div>
+        <br>
+        <br>
+        <div data-aos="fade-up-right" data-aos-offset="300">
+          <img src="assets/png/patch-not-found.png" alt=""/>
+        </div>
+        <br>
+        <br>
+        <div data-aos="fade-up-left" data-aos-offset="300">
+          <img src="assets/png/patch-not-found.png" alt=""/>
+        </div>
+        <br>
+        <br>
+        <div data-aos="zoom-in-right" data-aos-offset="300">
+          <img src="assets/png/patch-not-found.png" alt=""/>
+        </div>
+        <br>
+        <br>
+        <div data-aos="zoom-in-left" data-aos-offset="300">
+          <img src="assets/png/patch-not-found.png" alt=""/>
+        </div>
+        <br>
+      </div>
+    </section>
+  </main>
+</div>

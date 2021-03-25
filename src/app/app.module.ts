@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule} from "@angular/forms";
 import { UpcomingComponent } from './upcoming/upcoming.component';
+import { LaunchDetailsComponent } from './launch-details/launch-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
     CrewComponent,
     LoginComponent,
     RegisterComponent,
-    UpcomingComponent
+    UpcomingComponent,
+    LaunchDetailsComponent
   ],
   imports: [
     BrowserModule,
