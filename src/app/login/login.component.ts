@@ -14,19 +14,20 @@ export class LoginComponent implements OnInit {
 
   loginForm = new FormGroup({
     login: new FormControl("", Validators.required),
-    password: new FormControl("", Validators.required)
+    password: new FormControl("", Validators.required),
+    rememberMe: new FormControl("")
   })
 
   isLoginInvalid = false;
   isPasswordInvalid = false;
 
   body = Object({
-    username: 'krealll',
-    password: '12345678a',
+    username: '',
+    password: '',
     rememberMe: false
   })
 
-  response = {};
+  response = Object();
 
   constructor(private spacey: SpaceyService) { }
 
@@ -36,11 +37,12 @@ export class LoginComponent implements OnInit {
   submit(event: Event) {
     event.preventDefault();
     if(this.canSubmit()) {
-      // this.spacey.postData('auth/login', this.body).subscribe((result) => {
-      //   this.response = result;
-      //   console.log(this.response)
-      // });
-      this.spacey.getData('user/1').subscribe((result) => {
+
+      this.body.username = this.login.value;
+      this.body.password = this.password.value;
+      this.body.rememberMe = this.rememberMe.value;
+
+      this.spacey.postData('auth/login', this.body).subscribe((result) => {
         this.response = result;
         console.log(this.response)
       });
@@ -72,4 +74,6 @@ export class LoginComponent implements OnInit {
   get login() { return this.loginForm.get("login"); }
 
   get password() { return this.loginForm.get("password"); }
+
+  get rememberMe() { return this.loginForm.get("rememberMe") }
 }

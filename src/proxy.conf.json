@@ -1,0 +1,7 @@
+{
+  "/spacey/api/v1/": {
+    "target": "http://localhost:8074",
+    "secure": false
+  },
+  "changeOrigin": true
+}

@@ -1,5 +1,9 @@
 .wrapper {
-  background-color: #252626;
+  /*background-color: #252626;*/
+  background-image: url('src/assets/file/backgrounds/launches.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   align-content: center;
   padding-top: 7vh;
   padding-left: 15vh;

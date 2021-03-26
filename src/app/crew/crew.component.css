@@ -1,5 +1,9 @@
 .wrapper {
-  background-color: #252626;
+  /*background-color: #252626;*/
+  background-image: url('src/assets/file/backgrounds/launches.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   width: 100%;
   height: calc(100vh - 115.3px);
   align-content: center;
@@ -20,7 +24,11 @@ ngb-carousel {
   padding-top: 9vh;
   width: 100%;
   height: 100%;
-  background-color: #252626;
+  /*background-color: #252626;*/
+  background-image: url('src/assets/file/backgrounds/launches.webp');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   padding-bottom: 8px;
 }
 
@@ -57,7 +65,8 @@ ngb-carousel {
   display: block;
   text-align: center;
   padding-bottom: 5vh;
-  background: #252626;
+  /*background: #252626;*/
+  background: none;
   color: #fff;
   border-radius: 5px;
 }

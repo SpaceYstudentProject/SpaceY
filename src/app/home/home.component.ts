@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit {
     });
     this.spacexService.postData('launches/query', this.spacexService.getLaunchBody()).subscribe((result) => {
       this.upcoming = result;
-      console.log(this.upcoming)
     })
   }
 
@@ -49,7 +48,6 @@ export class HomeComponent implements OnInit {
 
   log(message: string) {
     if(!this.isSlid) {
-      console.log(message);
       this.success = 18;
       this.isSlid = !this.isSlid;
     }
