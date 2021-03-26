@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SpacexService} from "../spacex.service";
+import {SpaceyService} from "../spacey.service";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,15 @@ export class LoginComponent implements OnInit {
   isLoginInvalid = false;
   isPasswordInvalid = false;
 
-  constructor() { }
+  body = Object({
+    username: 'krealll',
+    password: '12345678a',
+    rememberMe: false
+  })
+
+  response = {};
+
+  constructor(private spacey: SpaceyService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +36,14 @@ export class LoginComponent implements OnInit {
   submit(event: Event) {
     event.preventDefault();
     if(this.canSubmit()) {
-      console.log(this.loginForm.value); //post
+      // this.spacey.postData('auth/login', this.body).subscribe((result) => {
+      //   this.response = result;
+      //   console.log(this.response)
+      // });
+      this.spacey.getData('user/1').subscribe((result) => {
+        this.response = result;
+        console.log(this.response)
+      });
     }
     else {
       if(this.login.invalid) {

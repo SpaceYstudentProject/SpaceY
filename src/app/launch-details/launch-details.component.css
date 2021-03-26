@@ -150,10 +150,8 @@
 }
 
 .spacer {
-  background: linear-gradient(#1d1d1d, black);
-  height: 18px;
-  /*opacity: 0.7;*/
-  margin-top: -9px;
+  background: linear-gradient(#111217, #050505);
+  height: 9px;
 }
 
 .rocket-section {
