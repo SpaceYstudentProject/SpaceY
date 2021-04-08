@@ -1,11 +1,11 @@
 <div class="wrapper">
   <main role="main">
-    <section class="jumbotron text-right section-jumbotron" (window:scroll)="onScrollEvent($event)"
+    <section class="jumbotron text-right section-jumbotron"
              [ngStyle]="{'background-image': 'url(assets/jpg/backgrounds/launch-current.jpg)' }">
       <div class="container container-body" ngSwitch="{{launch.details}}"
            [ngStyle]="{'background-image': 'url(assets/jpg/backgrounds/launch-current.jpg)'}">
         <img src="assets/png/star.png" class="btn-custom-star" alt=""/>
-        <h1 class="jumbotron-heading text-header text-center">{{launch.name}}</h1>
+        <h1 class="jumbotron-heading text-header-main text-center">{{launch.name}}</h1>
         <p class="lead text-center" *ngSwitchCase="''">SpaceX designs, manufactures and launches advanced rockets and
           spacecraft.</p>
         <p class="lead text-center" *ngSwitchDefault>{{launch.details}}</p>
@@ -26,40 +26,323 @@
         <img src="assets/png/error.png" class="btn-custom-error" alt="E"/>
       </div>
     </div>
-    <section class="rocket-section text-center">
-      <div class="spacer">
-      </div>
+    <div class="spacer"></div>
+    <br>
+    <br>
+    <br>
+    <section class="rocket-section" ngSwitch="{{currentContentRocket}}">
       <div class="container rocket-container">
-        <br>
-        <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-          <img src="assets/png/patch-not-found.png" alt=""/>
+        <div class="content-left">
+          <h1 class="text-header text-left">{{rocket.name}}</h1>
+          <h1 class="text-type text-left">{{rocket.type}}</h1>
+          <br>
+          <div class="buttons-head">
+            <button class="btn button-rocket text-center border-0"
+                    [class.button-rocket-active]="currentContentRocket == 'overview'"
+                    (click)="onClickOverview($event)">
+              Overview
+            </button>
+            <h1 class="button-divider text-center">|</h1>
+            <button class="btn button-rocket text-center button-2"
+                    [class.button-rocket-active]="currentContentRocket == 'first_stage'"
+                    (click)="onClickFirstStage($event)">First
+              stage
+            </button>
+            <h1 class="button-divider text-center">|</h1>
+            <button class="btn button-rocket text-center button-3"
+                    [class.button-rocket-active]="currentContentRocket == 'second_stage'"
+                    (click)="onClickSecondStage($event)">
+              Second stage
+            </button>
+            <h1 class="button-divider text-center">|</h1>
+            <button class="btn button-rocket text-center"
+                    [class.button-rocket-active]="currentContentRocket == 'engines'" (click)="onClickEngines($event)">
+              Engines
+            </button>
+          </div>
+          <div class="overview-body" *ngSwitchCase="'overview'">
+            <br>
+            <p class="text-left text-light">{{rocket.description}}</p>
+            <br>
+            <table class="table rocket-table">
+              <tbody class="text-light">
+              <tr>
+                <td class="text-left td-head">Height</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.height.meters}} m</span>
+                  <span class="td-content td-2"> / {{rocket.height.feet}} ft</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Diameter</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.diameter.meters}} m</span>
+                  <span class="td-content td-2"> / {{rocket.diameter.feet}} ft</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Mass</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.mass.kg}} kg</span>
+                  <span class="td-content td-2"> / {{rocket.mass.lb}} lb</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="first-stage-body" *ngSwitchCase="'first_stage'">
+            <br>
+            <table class="table rocket-table">
+              <tbody class="text-light">
+              <tr>
+                <td class="text-left td-head">Thrust sea level</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.first_stage.thrust_sea_level.kN}} kN</span>
+                  <span class="td-content td-2"> / {{rocket.first_stage.thrust_sea_level.lbf}} lbf</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Thrust vacuum</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.first_stage.thrust_vacuum.kN}} kN</span>
+                  <span class="td-content td-2"> / {{rocket.first_stage.thrust_vacuum.lbf}} lbf</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Fuel amount</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.first_stage.fuel_amount_tons}} t</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Burn time</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.first_stage.burn_time_sec}} s</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="second-stage-body" *ngSwitchCase="'second_stage'">
+            <br>
+            <table class="table rocket-table">
+              <tbody class="text-light">
+              <tr>
+                <td class="text-left td-head">Thrust</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.second_stage.thrust.kN}} kN</span>
+                  <span class="td-content td-2"> / {{rocket.second_stage.thrust.lbf}} lbf</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Composite fairing height</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.second_stage.payloads.composite_fairing.height.meters}} m</span>
+                  <span class="td-content td-2"> / {{rocket.second_stage.payloads.composite_fairing.height.feet}}
+                    f</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Composite fairing diameter</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.second_stage.payloads.composite_fairing.diameter.meters}} m</span>
+                  <span class="td-content td-2"> / {{rocket.second_stage.payloads.composite_fairing.diameter.feet}}
+                    f</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Fuel amount</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.second_stage.fuel_amount_tons}} t</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Burn time</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.second_stage.burn_time_sec}} s</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="engines-body" *ngSwitchCase="'engines'">
+            <br>
+            <table class="table rocket-table">
+              <tbody class="text-light">
+              <tr>
+                <td class="text-left td-head">Isp sea level</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.engines.isp.sea_level}} kN</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Isp vacuum</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.engines.isp.vacuum}} kN</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Thrust sea level</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.engines.thrust_sea_level.kN}} kN</span>
+                  <span class="td-content td-2"> / {{rocket.engines.thrust_sea_level.lbf}} lbf</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Thrust vacuum</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.engines.thrust_vacuum.kN}} kN</span>
+                  <span class="td-content td-2"> / {{rocket.engines.thrust_vacuum.lbf}} lbf</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Engines</td>
+                <td class="text-right td-body">
+                  <span class="td-content td-uppercase">{{rocket.engines.number}}</span>
+                  <span class="td-content"> x </span>
+                  <span class="td-content td-uppercase">{{rocket.engines.type}} {{rocket.engines.version}}</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="text-left td-head">Thrust to weight</td>
+                <td class="text-right td-body">
+                  <span class="td-content">{{rocket.engines.thrust_to_weight}} kN</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <br>
-        <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
-          <img src="assets/png/patch-not-found.png" alt=""/>
+        <div class="text-center" data-aos="fade-left"
+             data-aos-offset="150"
+             data-aos-easing="ease-in-sine">
+          <div class="img-rocket-body">
+            <img src="{{rocket.flickr_images[0]}}" class="img-rocket">
+          </div>
         </div>
-        <br>
-        <br>
-        <div data-aos="fade-up-right" data-aos-offset="300">
-          <img src="assets/png/patch-not-found.png" alt=""/>
-        </div>
-        <br>
-        <br>
-        <div data-aos="fade-up-left" data-aos-offset="300">
-          <img src="assets/png/patch-not-found.png" alt=""/>
-        </div>
-        <br>
-        <br>
-        <div data-aos="zoom-in-right" data-aos-offset="300">
-          <img src="assets/png/patch-not-found.png" alt=""/>
-        </div>
-        <br>
-        <br>
-        <div data-aos="zoom-in-left" data-aos-offset="300">
-          <img src="assets/png/patch-not-found.png" alt=""/>
-        </div>
-        <br>
       </div>
     </section>
+    <br>
+    <div class="container">
+      <hr class="my-4 border-light">
+      <h1 class="text-type text-center">Payload</h1>
+      <hr class="my-4 border-light">
+    </div>
+    <br>
+    <br>
+    <section class="payloads-section">
+      <div class="container payloads-container">
+        <div class="text-center" data-aos="fade-right"
+             data-aos-offset="150"
+             data-aos-easing="ease-in-sine">
+          <div class="img-payloads-body">
+            <img src="assets/jpg/payloads.jpg" class="img-payloads">
+          </div>
+        </div>
+        <div class="content-right">
+          <h1 class="text-header text-left">{{payloads.name}}</h1>
+          <h1 class="text-type text-left">{{payloads.type}}</h1>
+          <br>
+          <table class="table payloads-table">
+            <tbody class="text-light">
+            <tr>
+              <td class="text-left td-head">Mass</td>
+              <td class="text-right td-body">
+                <span class="td-content">{{payloads.mass_kg}} kg</span>
+                <span class="td-content td-2"> / {{payloads.mass_lbs}} lbs</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Orbit</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{payloads.orbit}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Customers</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{payloads.customers[0]}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Reference system</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{payloads.reference_system}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Regime</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{payloads.regime}}</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <div class="container">
+      <hr class="my-4 border-light">
+      <h1 class="text-type text-center">Launchpad</h1>
+      <hr class="my-4 border-light">
+    </div>
+    <br>
+    <br>
+    <section class="launchpad-section">
+      <div class="container launchpad-container">
+        <div class="content-right">
+          <h1 class="text-header text-left">{{launchpad.name}}</h1>
+          <h1 class="text-type text-left">{{launchpad.locality}}</h1>
+          <br>
+          <p class="text-left text-light text-details">{{launchpad.details}}</p>
+          <br>
+          <table class="table launchpad-table">
+            <tbody class="text-light">
+            <tr>
+              <td class="text-left td-head">Region</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{launchpad.region}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Timezone</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{launchpad.timezone}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Latitude / Longitude</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{launchpad.latitude}} / {{launchpad.longitude}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Launch attempts</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{launchpad.launch_attempts}}</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left td-head">Launch successes</td>
+              <td class="text-right td-body">
+                <span class="td-content td-uppercase">{{launchpad.launch_successes}}</span>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center" data-aos="fade-left"
+             data-aos-offset="150"
+             data-aos-easing="ease-in-sine">
+          <div class="img-launchpad-body">
+            <img src="{{getLaunchpadImage(launchpad.name)}}" class="img-launchpad">
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+    <br>
   </main>
 </div>

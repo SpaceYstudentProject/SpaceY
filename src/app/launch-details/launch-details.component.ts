@@ -11,7 +11,10 @@ export class LaunchDetailsComponent implements OnInit {
   id = '#'
   launch = Object();
   rocket = Object();
-  opacity = 1.0;
+  payloads = Object();
+  launchpad = Object();
+
+  currentContentRocket = 'overview';
 
   constructor(private spacex: SpacexService, private router: ActivatedRoute) { }
 
@@ -24,11 +27,38 @@ export class LaunchDetailsComponent implements OnInit {
       this.spacex.getData('rockets/' + this.launch.rocket).subscribe((result) => {
         this.rocket = result;
       });
+
+      this.spacex.getData('payloads/' + this.launch.payloads).subscribe((result) => {
+        this.payloads = result;
+      });
+
+      this.spacex.getData('launchpads/' + this.launch.launchpad).subscribe((result) => {
+        this.launchpad = result;
+      });
     });
   }
 
-  onScrollEvent(event: Event): void {
+  onClickOverview(event: Event) {
     event.preventDefault();
-    // this.opacity -= 0.01;
+    this.currentContentRocket = 'overview';
+  }
+
+  onClickFirstStage(event: Event) {
+    event.preventDefault();
+    this.currentContentRocket = 'first_stage';
+  }
+
+  onClickSecondStage(event: Event) {
+    event.preventDefault();
+    this.currentContentRocket = 'second_stage';
+  }
+
+  onClickEngines(event: Event) {
+    event.preventDefault();
+    this.currentContentRocket = 'engines';
+  }
+
+  getLaunchpadImage(path: string) {
+    return 'assets/jpg/launchpads/' + path + '.jpg';
   }
 }
