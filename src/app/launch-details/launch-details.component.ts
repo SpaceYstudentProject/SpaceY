@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { SpacexService } from "../spacex.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Element} from "@angular/compiler";
 
 @Component({
   selector: 'app-launch-details',
@@ -14,7 +16,14 @@ export class LaunchDetailsComponent implements OnInit {
   payloads = Object();
   launchpad = Object();
 
+  commentForm = new FormGroup({
+    comment: new FormControl("")
+  })
+
   currentContentRocket = 'overview';
+  commentActive = false;
+  commentDisabled = true;
+  commentTreeStatus = 'hide';
 
   constructor(private spacex: SpacexService, private router: ActivatedRoute) { }
 
@@ -38,6 +47,8 @@ export class LaunchDetailsComponent implements OnInit {
     });
   }
 
+  get comment() { return this.commentForm.get("comment"); }
+
   onClickOverview(event: Event) {
     event.preventDefault();
     this.currentContentRocket = 'overview';
@@ -60,5 +71,46 @@ export class LaunchDetailsComponent implements OnInit {
 
   getLaunchpadImage(path: string) {
     return 'assets/jpg/launchpads/' + path + '.jpg';
+  }
+
+  onClickCommentInput(event: Event) {
+    event.preventDefault();
+    if(!this.commentActive)
+      this.commentActive = true;
+  }
+
+  onClickCancel(event: Event) {
+    event.preventDefault();
+    if(this.commentActive)
+      this.commentActive = false;
+  }
+
+  commentChange() {
+    this.commentDisabled = this.comment.value == '';
+  }
+
+  onClickComment(event: Event) {
+    event.preventDefault();
+    if(this.comment.value != '')
+      console.log(this.comment.value);
+  }
+
+  onClickView(event: Event) {
+    event.preventDefault();
+    this.commentTreeStatus = 'view'
+  }
+
+  onClickHide(event: Event) {
+    event.preventDefault();
+    this.commentTreeStatus = 'hide'
+  }
+
+  autoGrow(element: any) {
+    element.style.minHeight = '38px';
+    element.style.minHeight = (element.scrollHeight) + 'px';
+  }
+
+  getElementByClassName(name: string) {
+    return document.getElementsByClassName(name).item(0);
   }
 }

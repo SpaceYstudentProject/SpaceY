@@ -342,6 +342,164 @@
         </div>
       </div>
     </section>
+    <div class="container">
+      <hr class="my-4 border-light">
+      <h1 class="text-type text-center">Comments</h1>
+      <hr class="my-4 border-light">
+    </div>
+    <section class="comment">
+      <div class="container">
+        <div class="d-flex justify-content-center row">
+          <div class="d-flex flex-column col-md-12">
+            <div class="comment-bottom p-2 px-4">
+              <div class="d-flex flex-row add-comment-section mt-4 mb-4" [formGroup]="commentForm">
+                <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-3.png"
+                     width="38" style="max-height: 38px">
+                <textarea rows="1" type="text"
+                          class="form-control mr-3 header-input" formControlName="comment"
+                          placeholder="Add a public comment..."
+                          (keypress)="autoGrow(getElementByClassName('header-input'))"
+                          (keyup)="autoGrow(getElementByClassName('header-input'))"
+                          (click)="onClickCommentInput($event)" (ngModelChange)="commentChange()">
+                </textarea>
+                <button class="btn btn-outline-light mr-3 keeper" *ngIf="commentActive">Cancel</button>
+                <button class="btn btn-outline-light keeper" *ngIf="commentActive">Comment</button>
+              </div>
+              <div class="buttons-body text-right">
+                <button class="btn btn-outline-light mr-3 btn-cancel" *ngIf="commentActive"
+                        (click)="onClickCancel($event)">Cancel
+                </button>
+                <button type="submit" class="btn btn-outline-light btn-comment disabled"
+                        *ngIf="commentActive && commentDisabled">Comment
+                </button>
+                <button type="submit" class="btn btn-outline-light btn-comment"
+                        *ngIf="commentActive && !commentDisabled" (click)="onClickComment($event)">Comment
+                </button>
+              </div>
+              <div class="comment-content" [class.comment-content-active]="commentActive">
+                <div class="commented-section mt-2">
+                  <div class="d-flex flex-row align-items-center commented-user">
+                    <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-7.png"
+                         width="38">
+                    <h5 class="mr-2 ml-sm-1">Corey Oates</h5>
+                    <span class="mb-1 ml-sm-1">4 hours ago</span>
+                  </div>
+                  <div class="comment-text-sm">
+                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                  </div>
+                  <div class="reply-section">
+                    <div class="d-flex flex-row align-items-center">
+                      <button class="btn show-body d-flex flex-row align-items-center"
+                              *ngIf="commentTreeStatus == 'hide'"
+                              (click)="onClickView($event)">
+                        <img src="assets/png/sort-down.png" class="img-sort"/>
+                        <div class="mt-1 ml-sm-2">View 5 replies</div>
+                      </button>
+                      <button class="btn hide-body d-flex flex-row align-items-center"
+                              *ngIf="commentTreeStatus == 'view'"
+                              (click)="onClickHide($event)">
+                        <img src="assets/png/sort-up.png" class="img-sort"/>
+                        <div class="mt-1 ml-sm-2">Hide 5 replies</div>
+                      </button>
+                      <div class="dot ml-sm-0"></div>
+                      <button class="btn ml-sm-0 mt-1">Reply</button>
+                    </div>
+                  </div>
+                  <div class="commented-section-child mt-2" *ngIf="commentTreeStatus == 'view'">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                      <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-8.png"
+                           width="38">
+                      <h5 class="mr-2 ml-sm-1">Gabotch Victoria</h5>
+                      <span class="mb-1 ml-sm-1">4 hours ago</span>
+                    </div>
+                    <div class="comment-text-sm">
+                      <span>Cras ornare arcu dui vivamus arcu felis bibendum. Quam nulla porttitor massa id neque aliquam vestibulum morbi. Massa tempor nec feugiat nisl pretium fusce id velit. Sapien nec sagittis aliquam malesuada bibendum arcu. Vitae sapien pellentesque habitant morbi.</span>
+                    </div>
+                  </div>
+                  <div class="commented-section-child mt-2" *ngIf="commentTreeStatus == 'view'">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                      <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-2.png"
+                           width="38">
+                      <h5 class="mr-2 ml-sm-1">Samoya Johns</h5>
+                      <span class="mb-1 ml-sm-1">1 hours ago</span>
+                    </div>
+                    <div class="comment-text-sm">
+                      <span>Turpis nunc eget lorem dolor. Ligula ullamcorper malesuada proin libero nunc consequat. Suspendisse interdum consectetur libero id faucibus nisl tincidunt eget. Orci a scelerisque purus semper eget duis at tellus. Vel orci porta non pulvinar neque laoreet suspendisse interdum. Tempus egestas sed sed risus pretium quam vulputate dignissim.</span>
+                    </div>
+                  </div>
+                  <div class="commented-section-child mt-2" *ngIf="commentTreeStatus == 'view'">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                      <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-4.png"
+                           width="38">
+                      <h5 class="mr-2 ml-sm-1">Fopali Chandler</h5>
+                      <span class="mb-1 ml-sm-1">3 hours ago</span>
+                    </div>
+                    <div class="comment-text-sm">
+                      <span>Quam elementum pulvinar etiam non quam. In massa tempor nec feugiat.</span>
+                    </div>
+                  </div>
+                  <div class="commented-section-child mt-2" *ngIf="commentTreeStatus == 'view'">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                      <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-5.png"
+                           width="38">
+                      <h5 class="mr-2 ml-sm-1">Makhaya Andrew</h5>
+                      <span class="mb-1 ml-sm-1">4 hours ago</span>
+                    </div>
+                    <div class="comment-text-sm">
+                      <span>Consectetur adipiscing elit ut aliquam purus sit. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Eu feugiat pretium nibh ipsum consequat.</span>
+                    </div>
+                  </div>
+                  <div class="commented-section-child mt-2" *ngIf="commentTreeStatus == 'view'">
+                    <div class="d-flex flex-row align-items-center commented-user">
+                      <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-1.png"
+                           width="38">
+                      <h5 class="mr-2 ml-sm-1">Bonga Peter</h5>
+                      <span class="mb-1 ml-sm-1">2 hours ago</span>
+                    </div>
+                    <div class="comment-text-sm">
+                      <span>Metus vulputate eu scelerisque felis. Suspendisse in est ante in nibh mauris cursus mattis. Maecenas pharetra convallis posuere morbi leo urna molestie. Nunc vel risus commodo viverra maecenas accumsan lacus vel facilisis. Viverra tellus in hac habitasse. Diam maecenas sed enim ut sem. Venenatis cras sed felis eget velit. Sit amet mattis vulputate enim nulla aliquet porttitor lacus luctus. Dolor sit amet consectetur adipiscing elit.</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="commented-section mt-2">
+                  <div class="d-flex flex-row align-items-center commented-user">
+                    <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-2.png"
+                         width="38">
+                    <h5 class="mr-2 ml-sm-1">Samoya Johns</h5>
+                    <span class="mb-1 ml-sm-1">5 hours ago</span>
+                  </div>
+                  <div class="comment-text-sm"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</span>
+                  </div>
+                  <div class="reply-section">
+                    <div class="d-flex flex-row align-items-center">
+                      <div class="dot ml-3"></div>
+                      <button class="btn ml-sm-0 mt-1">Reply</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="commented-section mt-2">
+                  <div class="d-flex flex-row align-items-center commented-user">
+                    <img class="img-fluid img-responsive rounded-circle mr-2" src="assets/png/avatars/avatar-5.png"
+                         width="38">
+                    <h5 class="mr-2 ml-sm-1">Makhaya Andrew</h5>
+                    <span class="mb-1 ml-sm-1">10 hours ago</span>
+                  </div>
+                  <div class="comment-text-sm">
+                    <span>Nunc sed id semper risus in hendrerit gravida rutrum. Non odio euismod lacinia at quis risus sed. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Enim facilisis gravida neque convallis a. In mollis nunc sed id. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Ultrices mi tempus imperdiet nulla malesuada pellentesque.</span>
+                  </div>
+                  <div class="reply-section">
+                    <div class="d-flex flex-row align-items-center">
+                      <div class="dot ml-3"></div>
+                      <button class="btn ml-sm-0 mt-1">Reply</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <br>
     <br>
   </main>
